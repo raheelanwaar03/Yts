@@ -689,18 +689,6 @@
 
                 <input type="button" class="btn btn-primary" name="submit" id="withdrawButton" value="Submit">
             </form>
-
-            <!-- Withdrawal History -->
-            <div class="withdraw-history">
-                <h3 class="text-center">Withdrawal History</h3>
-                @foreach ($widthrawH_history as $wh)
-                    <ul class="list-group">
-                        <li class="list-group-item">Date: {{ date('d-m-Y', strtotime($wh->updated_at)) }} | Amount: Rs.
-                            {{ $wh->widthraw_amount }}</li>
-                        <!-- Add more history items as needed -->
-                    </ul>
-                @endforeach
-            </div>
         </div>
 
     </main>
