@@ -558,60 +558,6 @@
             </div>
         </div>
 
-        {{-- Deposit --}}
-        <div class="container withdraw-container  hidden mt-2" id="deposit">
-            <h2 style="margin-top:-30px;" class="text-center">Deposit</h2>
-
-            <!-- Current Balance -->
-            <div class="mb-3">
-                <label for="currentBalance">Current Balance:</label>
-                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}"
-                    readonly>
-            </div>
-
-            <!-- Withdraw Form -->
-            <form action="{{ asset('User/Deposit/Balance/Request') }}" method="post">@csrf
-                <div class="form-group">
-                    <label for="selectBank">Select Bank:</label>
-                    <select class="form-control" id="selectBank" name="bank">
-                        <option value="Easypaisa">EasyPaisa</option>
-                        <option value="JazzCash">JazzCash</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="accountName">Account Name:</label>
-                    <input type="text" class="form-control" id="accountName" placeholder="Enter Account Name"
-                        name="name">
-                </div>
-
-                <div class="form-group">
-                    <label for="accountNumber">Account Number:</label>
-                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number"
-                        name="number">
-                </div>
-
-                <div class="form-group">
-                    <label for="accountNumber">Amount to Deposit:</label>
-                    <input type="text" class="form-control" id="accountNumber" name="deposit"
-                        placeholder="Enter Amount" name="amount">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-            <!-- Withdrawal History -->
-            <div class="withdraw-history">
-                <h3 class="text-center">Deposit History</h3>
-                @foreach ($widthrawH_history as $wh)
-                    <ul class="list-group">
-                        <li class="list-group-item">Date: {{ date('d-m-Y', strtotime($wh->updated_at)) }} | Amount: Rs.
-                            {{ $wh->widthraw_amount }}</li>
-                        <!-- Add more history items as needed -->
-                    </ul>
-                @endforeach
-            </div>
-        </div>
-
         {{-- profile --}}
         <div class="container profile-container hidden mt-2" id="profile">
             <h2 style="margin-top:-30px;">Profile</h2>
@@ -725,9 +671,6 @@
             <a href="#" class="aa" onclick="showContact();"><i class="fas fa-envelope"></i>
                 <div>Contact Us</div>
             </a>
-            <a href="#" class="aa" onclick="deposit();"><i class="fa fa-credit-card"></i>
-                <div>Deposit</div>
-            </a>
             <form action="{{ asset('logout') }}" method="post" class="mr-2">@csrf
                 <input class="aa" type="submit" value="Logout"
                     style="font-weight: 400;padding-left:10px !important;padding-right:10px !important;">
@@ -755,7 +698,6 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showTeam() {
@@ -768,7 +710,6 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showWithdraw() {
@@ -781,7 +722,6 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showWork() {
@@ -794,7 +734,6 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showProfile() {
@@ -807,7 +746,6 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showSettings() {
@@ -820,7 +758,6 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('profile').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'none';
         }
 
         function showContact() {
@@ -834,21 +771,6 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'block';
-            document.getElementById('deposit').style.display = 'none';
-        }
-
-        function deposit() {
-            var mycontact = document.getElementById('deposit');
-            mycontact.classList.remove('hidden');
-            mycontact.style.display = 'block';
-            document.getElementById('dashboardInfo').style.display = 'none';
-            document.getElementById('team').style.display = 'none';
-            document.getElementById('withdraw').style.display = 'none';
-            document.getElementById('work').style.display = 'none';
-            document.getElementById('profile').style.display = 'none';
-            document.getElementById('settings').style.display = 'none';
-            document.getElementById('contact').style.display = 'none';
-            document.getElementById('deposit').style.display = 'block';
         }
 
 
