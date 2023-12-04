@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/')->with('success','You are successfully logged in to your Account');
+        return redirect(route('User.Dashboard'))->with('success','You are successfully logged in to your Account');
     }
 
     /**

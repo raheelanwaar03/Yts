@@ -73,6 +73,6 @@ class RegisterationFeesController extends Controller
         $feesDetails->bank_username = $validated['bank_username'];
         $feesDetails->tid = $validated['tid'];
         $feesDetails->save();
-        return redirect(route('LandingPage'))->with('success', 'Your details has been submited successfully our team will review your details and approve your account if given information is valid!');
+        return redirect()->route('LandingPage')->with('success', 'Your details has been submited successfully our team will review your details and approve your account if given information is valid!');
     }
 }
