@@ -23,12 +23,16 @@ class DailyTaskController extends Controller
             'link' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'level' => 'required',
+            'package' => 'required',
         ]);
 
         $product = new DailyTask();
         $product->link = $validated['link'];
         $product->description = $validated['description'];
         $product->price = $validated['price'];
+        $product->level = $validated['level'];
+        $product->package = $validated['package'];
         $product->save();
         return redirect()->back()->with('success', 'Task Added successfully');
     }

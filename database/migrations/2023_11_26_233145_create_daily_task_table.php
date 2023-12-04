@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('link');
             $table->string('price');
             $table->string('description');
+            $table->string('package');
+            $table->string('level');
             $table->timestamps();
         });
     }

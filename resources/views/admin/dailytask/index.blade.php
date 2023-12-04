@@ -91,6 +91,29 @@
             <form action="{{ url('Admin/daily-task-store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
+                    <label for="" class="m-3">Select Level</label>
+                    <select name="level" class="form-control">
+                        <option value="level 1">Level 1</option>
+                        <option value="level 2">Level 2</option>
+                        <option value="level 3">Level 3</option>
+                        <option value="level 4">Level 4</option>
+                        <option value="level 5">Level 5</option>
+                        <option value="level 6">Level 6</option>
+                        <option value="level 7">Level 7</option>
+                        <option value="level 8">Level 8</option>
+                        <option value="level 9">Level 9</option>
+                        <option value="level 10">Level 10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="" class="m-3">Package</label>
+                    <select name="package">
+                        <option value="1">One Star</option>
+                        <option value="2">Two Star</option>
+                        <option value="3">Three Star</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="" class="m-3">Link</label>
                     <input type="text" name="link" class="form-group" placeholder="Add Link">
                 </div>
