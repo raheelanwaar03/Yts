@@ -619,7 +619,7 @@
                 <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
                 <h3 style="margin-top:-30px;color:black;">Total
                     Earning({{ today_earning() }})
-                    <a href="#" onclick="total_earning();">Widthraw</a>
+                    <a href="#" style="color:black;text-decoration:none;" onclick="total_earning();">Widthraw</a>
                 </h3>
             </div>
             <table class="table table-bordered  table-sm text-center">
