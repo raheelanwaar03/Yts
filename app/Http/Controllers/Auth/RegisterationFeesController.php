@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\admin\EasyPaisaMangement;
 use App\Models\FeesCollecator;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Providers\RouteServiceProvider;
-use Auth;
+
 
 class RegisterationFeesController extends Controller
 {
