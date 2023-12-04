@@ -24,6 +24,11 @@ class UserWorkController extends Controller
 
     public function widthrawBalanceRequest(Request $request)
     {
+        $user_level = auth()->user()->level;
+        if ($user_level != 'level 10') {
+            return redirect()->back()->with('error', 'You cannot widthraw untill your level becomes 10');
+        }
+
         $validated = $request->validate([
             'widthraw_bank' => 'required',
             'widthraw_amount' => 'required',
@@ -31,6 +36,8 @@ class UserWorkController extends Controller
             'widthraw_num' => 'required',
         ]);
         $userWidthrawAmount = $validated['widthraw_amount'];
+
+        // Checking user level
 
         // See user balance
 
@@ -73,5 +80,4 @@ class UserWorkController extends Controller
     {
         return 'Not Confirmed';
     }
-
 }

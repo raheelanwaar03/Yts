@@ -443,15 +443,6 @@
                     this to your friends and family.
                 </div>
             </div>
-            <div class="referral-container mt-1">
-                <div class="row">
-                    <div class="col-6"> <input type="text"
-                            value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="referralLink" readonly>
-                    </div>
-                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Copy Referral
-                            Link</button></div>
-                </div>
-            </div>
             <div class="card-container">
                 <div class="card">
                     <div class="row">
@@ -482,6 +473,15 @@
         </div>
         {{-- my team --}}
         <div class="container mt-2 hidden" style="overflow-y: auto !important" id="team">
+            <div class="referral-container mt-2 mb-4">
+                <div class="row">
+                    <div class="col-6"> <input type="text"
+                            value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="referralLink" readonly>
+                    </div>
+                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Copy Referral
+                            Link</button></div>
+                </div>
+            </div>
             <div class="text-center">
                 <h2 style="margin-top:-10px;">Total Team: {{ $team_count }}</h2>
             </div>
@@ -565,7 +565,8 @@
             <!-- Current Balance -->
             <div class="mb-3">
                 <label for="currentBalance">Current Balance:</label>
-                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}" readonly>
+                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}"
+                    readonly>
             </div>
 
             <!-- Withdraw Form -->
@@ -592,8 +593,8 @@
 
                 <div class="form-group">
                     <label for="accountNumber">Amount to Deposit:</label>
-                    <input type="text" class="form-control" id="accountNumber" name="deposit" placeholder="Enter Amount"
-                        name="amount">
+                    <input type="text" class="form-control" id="accountNumber" name="deposit"
+                        placeholder="Enter Amount" name="amount">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -618,7 +619,8 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}" readonly>
+                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"
+                        readonly>
                 </div>
 
                 <div class="form-group">
