@@ -50,6 +50,7 @@ class clean extends Command
         $setting->refer_amount = '50';
         $setting->minimum_amount = '100';
         $setting->maximun_amount = '500';
+        $setting->status = '1';
         $setting->save();
 
         $user = new User();
