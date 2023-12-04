@@ -686,8 +686,7 @@
                     <input type="text" class="form-control" id="accountNumber" placeholder="Enter Amount"
                         name="widthraw_amount">
                 </div>
-
-                <input type="button" class="btn btn-primary" name="submit" id="withdrawButton" value="Submit">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
