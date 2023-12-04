@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\admin\EasyPaisaMangement;
+use App\Models\admin\Setting;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -42,6 +43,14 @@ class clean extends Command
         $easyPaisa->easy_num = '9999999999';
         $easyPaisa->status = 1;
         $easyPaisa->save();
+
+        // Setting
+
+        $setting = new Setting();
+        $setting->refer_amount = '50';
+        $setting->minimum_amount = '100';
+        $setting->maximun_amount = '500';
+        $setting->save();
 
         $user = new User();
         $user->name = 'Admin';
