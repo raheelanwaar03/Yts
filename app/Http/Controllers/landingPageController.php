@@ -14,14 +14,7 @@ class landingPageController extends Controller
 {
     public function home()
     {
-
-        if (auth()->check()) {
-            // The user is authenticated, you can perform additional actions if needed
-            return redirect('/User/Dashboard');
-        } else {
-            // The user is not authenticated
-            return view('LandingPage.welcome');
-        }
+        return view('LandingPage.welcome');
     }
 
     public function contact()
@@ -53,37 +46,26 @@ class landingPageController extends Controller
             $productShare->username = auth()->user()->username;
             $productShare->save();
         }
-        
-        
-          $currentDate = Carbon::now();
-         $fifteenDaysAgo = $currentDate->subDays(15);
-         // checking user last 15 days referals
-         
-         $user = User::find(auth()->user()->id); 
 
-           if (!$user->isAccount15DaysOld()) {
-               
-                  $products = AdminProductModel::where('product_level',auth()->user()->level)->paginate(9);
-                  return view('user.work.index',compact('products'));
-               
-            }
-            
-             $userReferal = User::where('referal',auth()->user()->username)->whereDate('created_at', '>' , $fifteenDaysAgo)->where('status','approved')->get();
-              if($userReferal->isEmpty())
-                 {
-                   return redirect()->back()->with('error','You have not add any user from last 15 days. Please add new user to continue');
-                 }
-                 else{
-                     $products = AdminProductModel::where('product_level',auth()->user()->level)->paginate(9);
-                  return view('user.work.index',compact('products'));
-                 }
+
+        $currentDate = Carbon::now();
+        $fifteenDaysAgo = $currentDate->subDays(15);
+        // checking user last 15 days referals
+
+        $user = User::find(auth()->user()->id);
+
+        if (!$user->isAccount15DaysOld()) {
+
+            $products = AdminProductModel::where('product_level', auth()->user()->level)->paginate(9);
+            return view('user.work.index', compact('products'));
+        }
+
+        $userReferal = User::where('referal', auth()->user()->username)->whereDate('created_at', '>', $fifteenDaysAgo)->where('status', 'approved')->get();
+        if ($userReferal->isEmpty()) {
+            return redirect()->back()->with('error', 'You have not add any user from last 15 days. Please add new user to continue');
+        } else {
+            $products = AdminProductModel::where('product_level', auth()->user()->level)->paginate(9);
+            return view('user.work.index', compact('products'));
+        }
     }
 }
-
-
-
-
-
-
-
-
