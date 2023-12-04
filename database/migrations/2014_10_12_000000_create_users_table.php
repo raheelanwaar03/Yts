@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('balance')->default(0);
             $table->integer('plan');
             $table->string('referal')->default('default');
-            $table->text('level')->default('Level 0');
+            $table->text('level')->default('Level 1');
             $table->string('status')->default('pending');
             $table->string('role')->default('user');
             $table->timestamp('email_verified_at')->nullable();

@@ -22,6 +22,7 @@ class SurveyProductRewaradController extends Controller
             $visitor = new Vistor();
             $visitor->user_id = auth()->user()->id;
             $visitor->product_id = $id;
+            $visitor->amount += $procutRewarad;
             $visitor->ip = request()->ip();
             $visitor->dateTime = date(now());
             $visitor->save();

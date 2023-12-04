@@ -46,6 +46,7 @@ class clean extends Command
         $user = new User();
         $user->name = 'Admin';
         $user->referal = 'default';
+        $user->level = 'Level 2';
         $user->balance = '0';
         $user->phone = '03149720318';
         $user->email = 'admin123@gmail.com';
@@ -60,6 +61,7 @@ class clean extends Command
         $user->name = 'Demo';
         $user->email = 'testing123@gmail.com';
         $user->referal = 'default';
+        $user->level = 'Level 2';
         $user->balance = '0';
         $user->phone = '03167007156';
         $user->password = Hash::make('asdfasdf');

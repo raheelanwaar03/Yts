@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('ip');
             $table->string('user_id');
             $table->string('product_id');
+            $table->string('amount');
             $table->dateTime('dateTime');
             $table->timestamps();
         });

@@ -565,8 +565,7 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"
-                        readonly>
+                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}" readonly>
                 </div>
 
                 <div class="form-group">
@@ -616,7 +615,11 @@
         </div>
         {{-- todays work --}}
         <div class="container work-container hidden mt-2" id="work">
-            <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
+            <div class="d-flex">
+                <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
+                <h3 style="margin-top:-30px;"><a href="#" style="text-decoration: none;">Total
+                        Earning({{ today_earning() }})</a></h3>
+            </div>
             <table class="table table-bordered  table-sm text-center">
                 <thead>
 

@@ -7,7 +7,6 @@ use App\Models\admin\AdminProductModel;
 use App\Models\User;
 use App\Models\user\WidthrawBalance;
 use Carbon\Carbon;
-use Auth;
 use App\Models\DailyTask;
 
 class UserDashboardController extends Controller

@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\user\WidthrawBalance;
+use App\Models\Vistor;
 
 function allUser()
 {
@@ -46,7 +47,6 @@ function userWidthrawalBalance()
     return $totalWidthraw;
 }
 
-
 function level()
 {
     $users = User::where('referal', auth()->user()->username)->get();
@@ -54,82 +54,13 @@ function level()
     return $userRefer;
 }
 
-
-// function giveLevel()
-// {
-    
-//      $users = User::where('status', 'approved')->get();
-//         foreach ($users as $user) {
-//             $mainUser = User::where('referal', $user->username)->where('status','approved')->get();
-//             $referCount = $mainUser->count();
-
-//             if ($mainUser != '') {
-//                 if ($referCount <= 4) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 0';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 5) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 1';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 20) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 2';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 45) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 3';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 70) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 4';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 100) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 5';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 145) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 6';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 200) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 7';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 270) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 8';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 350) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 9';
-//                     $user->save();
-//                 }
-//                 if ($referCount >= 10000) {
-//                     $user = User::where('id', $user->id)->first();
-//                     $user->level = 'Level 10';
-//                     $user->save();
-//                 }
-//             }
-//         }
-    
-    
-// }
-
-
-
-
-
-
-
-
-
+function today_earning()
+{
+    $earning = Vistor::where('user_id',auth()->user()->id)->get();
+    $total_earning = 0;
+    foreach($earning as $earn)
+    {
+        $total_earning += $earn->amount;
+    }
+    return $total_earning;
+}
