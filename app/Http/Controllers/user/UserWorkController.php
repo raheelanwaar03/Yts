@@ -29,6 +29,7 @@ class UserWorkController extends Controller
             return redirect()->back()->with('error', 'You cannot widthraw untill your level becomes 10');
         }
 
+
         $validated = $request->validate([
             'widthraw_bank' => 'required',
             'widthraw_amount' => 'required',
@@ -36,6 +37,15 @@ class UserWorkController extends Controller
             'widthraw_num' => 'required',
         ]);
         $userWidthrawAmount = $validated['widthraw_amount'];
+        if ($user_level = 'level 1') {
+            if ($userWidthrawAmount >= 99) {
+                return redirect()->back()->with('error', 'You can only widthraw 100 rupees on level 1');
+            }
+        } elseif ($user_level != 'level 1') {
+            if ($userWidthrawAmount >= 299) {
+                return redirect()->back()->with('error', 'You can only widthraw 300 rupees.');
+            }
+        }
 
         // Checking user level
 
