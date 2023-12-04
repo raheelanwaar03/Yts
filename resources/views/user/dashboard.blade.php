@@ -619,6 +619,7 @@
                 <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
                 <h3 style="margin-top:-30px;color:black;">Total
                     Earning({{ today_earning() }})</h3>
+                <a href="#" onclick="total_earning();">Widthraw</a>
             </div>
             <table class="table table-bordered  table-sm text-center">
                 <thead>
@@ -644,6 +645,35 @@
         {{-- contact us --}}
         <div class="text-center hidden" id="contact">
             contact us
+        </div>
+        {{-- Total earning Widthraw --}}
+        <div class="container work-container hidden mt-2" id="total_earning">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
+                <h3 style="margin-top:-30px;color:black;">Total
+                    Earning({{ today_earning() }})</h3>
+                <a href="" id="total_earning">Widthraw</a>
+            </div>
+            <table class="table table-bordered  table-sm text-center">
+                <thead>
+
+                    <tr class="text-dark" style="background-color: rgb(255, 132, 110)">
+                        <th scope="col">#</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Discription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($daily_task as $dt)
+                        <tr>
+                            <th scope="row">{{ $dt->id }}</th>
+                            <td><a href="{{ route('User.Product.Reward', ['id' => $dt->id]) }}"
+                                    onclick="window.open('{{ $dt->link }}', '_blank')">{{ $dt->link }}</a></td>
+                            <td>{{ $dt->description }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
     </main>
@@ -774,6 +804,20 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'block';
+        }
+
+        function total_earning() {
+            var mycontact = document.getElementById('total_earning');
+            mycontact.classList.remove('hidden');
+            mycontact.style.display = 'block';
+            document.getElementById('dashboardInfo').style.display = 'none';
+            document.getElementById('team').style.display = 'none';
+            document.getElementById('withdraw').style.display = 'none';
+            document.getElementById('work').style.display = 'none';
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('settings').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'block';
         }
 
 
