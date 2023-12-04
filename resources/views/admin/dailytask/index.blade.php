@@ -107,7 +107,7 @@
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Package</label>
-                    <select name="package">
+                    <select name="plan" class="form-control">
                         <option value="1">One Star</option>
                         <option value="2">Two Star</option>
                         <option value="3">Three Star</option>

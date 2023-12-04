@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('link');
             $table->string('price');
             $table->string('description');
-            $table->string('package');
+            $table->string('plan');
             $table->string('level');
             $table->timestamps();
         });
