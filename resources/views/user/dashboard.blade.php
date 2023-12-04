@@ -619,7 +619,8 @@
                 <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
                 <h3 style="margin-top:-30px;color:black;">Total
                     Earning({{ today_earning() }})
-                    <a href="#" style="color:black;text-decoration:none;" onclick="total_earning();">Widthraw</a>
+                    <a href="#" style="color:black;text-decoration:none;" class="btn btn-primary"
+                        onclick="total_earning();">Widthraw</a>
                 </h3>
             </div>
             <table class="table table-bordered  table-sm text-center">
@@ -648,33 +649,58 @@
             contact us
         </div>
         {{-- Total earning Widthraw --}}
-        <div class="container work-container hidden mt-2" id="total_earning">
-            <div class="d-flex justify-content-between align-items-center">
-                <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
-                <h3 style="margin-top:-30px;color:black;">Total
-                    Earning({{ today_earning() }})</h3>
-                <a href="" id="total_earning">Widthraw</a>
-            </div>
-            <table class="table table-bordered  table-sm text-center">
-                <thead>
+        <div class="container withdraw-container  hidden mt-2" id="total_earning">
+            <h2 style="margin-top:-30px;" class="text-center">Withdraw</h2>
 
-                    <tr class="text-dark" style="background-color: rgb(255, 132, 110)">
-                        <th scope="col">#</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Discription</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($daily_task as $dt)
-                        <tr>
-                            <th scope="row">{{ $dt->id }}</th>
-                            <td><a href="{{ route('User.Product.Reward', ['id' => $dt->id]) }}"
-                                    onclick="window.open('{{ $dt->link }}', '_blank')">{{ $dt->link }}</a></td>
-                            <td>{{ $dt->description }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <!-- Current Balance -->
+            <div class="mb-3">
+                <label for="currentBalance">Current Balance:</label>
+                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}"
+                    readonly>
+            </div>
+
+            <!-- Withdraw Form -->
+            <form action="{{ asset('User/Widthraw/Balance/Request') }}" method="post">@csrf
+                <div class="form-group">
+                    <label for="selectBank">Select Bank:</label>
+                    <select class="form-control" id="selectBank" name="widthraw_bank">
+                        <option value="Easypaisa">EasyPaisa</option>
+                        <option value="JazzCash">JazzCash</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountName">Account Name:</label>
+                    <input type="text" class="form-control" id="accountName" placeholder="Enter Account Name"
+                        name="widthraw_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="accountNumber">Account Number:</label>
+                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number"
+                        name="widthraw_num">
+                </div>
+
+                <div class="form-group">
+                    <label for="accountNumber">Amount:</label>
+                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter Amount"
+                        name="widthraw_amount">
+                </div>
+
+                <input type="button" class="btn btn-primary" name="submit" id="withdrawButton" value="Submit">
+            </form>
+
+            <!-- Withdrawal History -->
+            <div class="withdraw-history">
+                <h3 class="text-center">Withdrawal History</h3>
+                @foreach ($widthrawH_history as $wh)
+                    <ul class="list-group">
+                        <li class="list-group-item">Date: {{ date('d-m-Y', strtotime($wh->updated_at)) }} | Amount: Rs.
+                            {{ $wh->widthraw_amount }}</li>
+                        <!-- Add more history items as needed -->
+                    </ul>
+                @endforeach
+            </div>
         </div>
 
     </main>
