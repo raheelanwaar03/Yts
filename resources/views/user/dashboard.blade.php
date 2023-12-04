@@ -615,7 +615,7 @@
         </div>
         {{-- todays work --}}
         <div class="container work-container hidden mt-2" id="work">
-            <div class="d-flex">
+            <div class="d-flex justify-content-between align-items-center">
                 <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
                 <h3 style="margin-top:-30px;color:black;">Total
                     Earning({{ today_earning() }})</h3>
