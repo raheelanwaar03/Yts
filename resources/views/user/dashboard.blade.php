@@ -616,12 +616,11 @@
         {{-- todays work --}}
         <div class="container work-container hidden mt-2" id="work">
             <div class="d-flex justify-content-between align-items-center">
-                <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
-                <h3 style="margin-top:-30px;color:black;">Total
-                    Earning({{ today_earning() }})
+                <h4 style="margin-top:-30px;" class="text-center">Today's Work</h4>
+                <h5 style="margin-top:-30px;color:black;">Earning({{ today_earning() }})
                     <a href="#" style="color:black;text-decoration:none;" class="btn btn-primary"
                         onclick="total_earning();">Widthraw</a>
-                </h3>
+                </h5>
             </div>
             <table class="table table-bordered  table-sm text-center">
                 <thead>
