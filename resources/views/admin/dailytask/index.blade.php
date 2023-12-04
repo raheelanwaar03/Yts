@@ -119,13 +119,12 @@
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Price</label>
-                    <input type="text" name="price" class="form-group" placeholder="Add Link Price">
+                    <input type="number" name="price" class="form-group" placeholder="Add Link Price">
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Description</label>
                     <textarea name="description" class="form-control" rows="7" placeholder="Enter Description"></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Enter</button>
             </form>
         </div>

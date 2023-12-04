@@ -25,6 +25,7 @@ class DailyTaskController extends Controller
             'price' => 'required',
             'level' => 'required',
             'plan' => 'required',
+
         ]);
 
         $product = new DailyTask();
