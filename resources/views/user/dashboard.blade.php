@@ -745,6 +745,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showTeam() {
@@ -757,6 +758,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showWithdraw() {
@@ -769,6 +771,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showWork() {
@@ -781,6 +784,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showProfile() {
@@ -793,6 +797,7 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showSettings() {
@@ -805,6 +810,7 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('profile').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function showContact() {
@@ -818,6 +824,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'block';
+            document.getElementById('total_earning').style.display = 'none';
         }
 
         function total_earning() {
