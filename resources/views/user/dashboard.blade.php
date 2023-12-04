@@ -618,8 +618,9 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2 style="margin-top:-30px;" class="text-center">Today's Work</h2>
                 <h3 style="margin-top:-30px;color:black;">Total
-                    Earning({{ today_earning() }})</h3>
-                <a href="#" onclick="total_earning();">Widthraw</a>
+                    Earning({{ today_earning() }})
+                    <a href="#" onclick="total_earning();">Widthraw</a>
+                </h3>
             </div>
             <table class="table table-bordered  table-sm text-center">
                 <thead>
