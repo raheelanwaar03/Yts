@@ -17,6 +17,7 @@ Route::name('User.')->prefix('User')->middleware('user','auth','feesCheck')->gro
         Route::get('/Refer/Friend',[UserWorkController::class,'referFriend'])->name('Refer.New.Friend');
         Route::get('/Widthraw/Balance',[UserWorkController::class,'widthrawBalance'])->name('Widthraw.Balance');
         Route::post('/Widthraw/Balance/Request',[UserWorkController::class,'widthrawBalanceRequest'])->name('Widthraw.Balance.Request');
+        Route::post('/Widthraw/Total/Earning',[UserWorkController::class,'widthrawTotalEarning'])->name('Widthraw.Total.Earning');
         Route::post('/Deposit/Balance/Request',[UserWorkController::class,'deposit'])->name('Deposit.Request');
         // giving commission on review and surve
 

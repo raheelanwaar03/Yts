@@ -655,12 +655,12 @@
             <!-- Current Balance -->
             <div class="mb-3">
                 <label for="currentBalance">Current Balance:</label>
-                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}"
-                    readonly>
+                <input type="text" class="form-control" id="currentBalance" value="{{ today_earning() }}" readonly>
             </div>
 
             <!-- Withdraw Form -->
-            <form action="{{ asset('User/Widthraw/Balance/Request') }}" method="post">@csrf
+            <form action="{{ route('User.Widthraw.Total.Earning') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="selectBank">Select Bank:</label>
                     <select class="form-control" id="selectBank" name="widthraw_bank">
