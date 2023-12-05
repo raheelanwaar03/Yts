@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(function () {
     Route::get('/Dashboard', [AdminDashboardController::class, 'dashboard'])->name('Dashboard');
+    Route::get('/Email', [AdminDashboardController::class, 'emailSetting'])->name('Email.Setting');
+    Route::post('/Change/Email', [AdminDashboardController::class, 'changeEmailSetting'])->name('Change.Email.Setting');
+    Route::get('/Delete/Email/{id}', [AdminDashboardController::class, 'deleteEmail'])->name('Delete.Email');
     Route::get('/Edit/User/{id}', [AdminDashboardController::class, 'editUser'])->name('Edit.User');
     Route::post('/Update/User/{id}', [AdminDashboardController::class, 'updateUser'])->name('Update.User');
     Route::get('/User/Tids', [AdminDashboardController::class, 'userTids'])->name('All.Tids');

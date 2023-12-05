@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\EamilSetting;
 use App\Models\admin\Setting;
 use App\Models\User;
 use App\Models\Vistor;
@@ -24,6 +25,31 @@ class AdminDashboardController extends Controller
         $user = User::where('id', $id)->first();
         return view('admin.dashboard.editUser', compact('user'));
     }
+
+    // Email setting
+
+    public function emailSetting()
+    {
+        $email_setting = EamilSetting::get();
+        return view('admin.email', compact('email_setting'));
+    }
+
+    public function changeEmailSetting(Request $request)
+    {
+        $eamil_setting = new EamilSetting();
+        $eamil_setting->email = $request->email;
+        $eamil_setting->status = $request->status;
+        $eamil_setting->save();
+        return redirect()->back()->with('success', 'Email Changed');
+    }
+
+    public function deleteEmail($id)
+    {
+        $email = EamilSetting::find($id);
+        $email->delete();
+        return redirect()->back()->with('success', 'Email Deleted');
+    }
+
 
     public function updateUser(Request $request, $id)
     {
@@ -78,25 +104,24 @@ class AdminDashboardController extends Controller
     public function approveUserAccount($id)
     {
         // getting widthraw commission of admin
-        $setting = Setting::where('status',1)->first();
+        $setting = Setting::where('status', 1)->first();
         $firstCommission = $setting->refer_amount;
 
         $user = User::find($id);
         $user->status = 'approved';
         $user->save();
         //  getting second user
-        $firstUpliner = User::where('email', $user->referal)->where('status','approved')->first();
+        $firstUpliner = User::where('email', $user->referal)->where('status', 'approved')->first();
         if ($firstUpliner == null) {
             return redirect()->back()->with('success', 'Account has beed Approved successfully');
         } else {
             $firstUpliner->balance += $firstCommission;
-           $firstUpliner->save();
-
+            $firstUpliner->save();
         }
         //  Second Upliner
         $indirectCommission1 = 20;
         // getting user
-        $secondUpliner = User::where('email', $firstUpliner->referal)->where('status','approved')->first();
+        $secondUpliner = User::where('email', $firstUpliner->referal)->where('status', 'approved')->first();
 
         if ($secondUpliner == '') {
             return redirect()->back()->with('success', 'Account has beed Approved successfully');
@@ -107,7 +132,7 @@ class AdminDashboardController extends Controller
         // Third UPliner
         $indirectCommission2 = 5;
         // getting third person;
-        $thirdUpliner = User::where('email', $secondUpliner->referal)->where('status','approved')->first();
+        $thirdUpliner = User::where('email', $secondUpliner->referal)->where('status', 'approved')->first();
         if ($thirdUpliner == '') {
             return redirect()->back()->with('success', 'Account has beed Approved successfully');
         } else {
@@ -199,50 +224,42 @@ class AdminDashboardController extends Controller
 
     public function vistors()
     {
-        $vistors = Vistor::whereDate('created_at',now()->today())->get();
-        return view('admin.dashboard.vistors',compact('vistors'));
+        $vistors = Vistor::whereDate('created_at', now()->today())->get();
+        return view('admin.dashboard.vistors', compact('vistors'));
     }
 
 
     public function deleteUnnecessary()
     {
-        $users = User::where('role','user')->where('status','rejected')->get();
-        foreach( $users as $user )
-        {
-            $user = User::where('id',$user->id)->first();
+        $users = User::where('role', 'user')->where('status', 'rejected')->get();
+        foreach ($users as $user) {
+            $user = User::where('id', $user->id)->first();
             $user->delete();
         }
 
-        return redirect()->back()->with('success','Rejected Users Deleted Successfully!');
-
+        return redirect()->back()->with('success', 'Rejected Users Deleted Successfully!');
     }
 
     public function deletePending()
     {
-        $users = User::where('role','user')->where('status','pending')->get();
-        foreach( $users as $user )
-        {
-            $user = User::where('id',$user->id)->first();
+        $users = User::where('role', 'user')->where('status', 'pending')->get();
+        foreach ($users as $user) {
+            $user = User::where('id', $user->id)->first();
             $user->delete();
         }
 
-        return redirect()->back()->with('success','Rejected Users Deleted Successfully!');
-
+        return redirect()->back()->with('success', 'Rejected Users Deleted Successfully!');
     }
 
 
     public function deleteIp()
     {
         $vistors = Vistor::get();
-        foreach( $vistors as $vistor )
-        {
-            $vistor = Vistor::where('id',$vistor->id)->first();
+        foreach ($vistors as $vistor) {
+            $vistor = Vistor::where('id', $vistor->id)->first();
             $vistor->delete();
         }
 
-        return redirect()->back()->with('success','Cache cleared Successfully!');
-
+        return redirect()->back()->with('success', 'Cache cleared Successfully!');
     }
-
-
 }

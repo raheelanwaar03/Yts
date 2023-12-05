@@ -770,7 +770,7 @@
         <div class="text-center hidden" id="contact">
             contact us
             <div class="container">
-                <form action="mailto:asraah455@gmail.com?subject=Mail from Site!" method="post">
+                <form action="mailto:{{ $email_setting->email }}?subject=Mail from Site!" method="post">
                     @csrf
                     <div class="form-group">
                         <label>Name</label>
