@@ -73,40 +73,40 @@ class UserWorkController extends Controller
 
     public function widthrawTotalEarning(Request $request)
     {
-        $user_level = auth()->user()->level;
-        if ($user_level != 'level 10') {
-            return redirect()->back()->with('error', 'You cannot widthraw untill your level becomes 10');
-        }
+        // $user_level = auth()->user()->level;
+        // if ($user_level != 'level 10') {
+        //     return redirect()->back()->with('error', 'You cannot widthraw untill your level becomes 10');
+        // }
 
-        $validated = $request->validate([
-            'widthraw_bank' => 'required',
-            'widthraw_amount' => 'required',
-            'widthraw_name' => 'required',
-            'widthraw_num' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'widthraw_bank' => 'required',
+        //     'widthraw_amount' => 'required',
+        //     'widthraw_name' => 'required',
+        //     'widthraw_num' => 'required',
+        // ]);
 
 
-        $userWidthrawAmount = $validated['widthraw_amount'];
-        if ($user_level = 'level 1') {
-            if ($userWidthrawAmount >= 99) {
-                return redirect()->back()->with('error', 'You can only widthraw 100 rupees on level 1');
-            }
-        } elseif ($user_level != 'level 1') {
-            if ($userWidthrawAmount >= 299) {
-                return redirect()->back()->with('error', 'You can only widthraw 300 rupees.');
-            }
-        }
+        // $userWidthrawAmount = $validated['widthraw_amount'];
+        // if ($user_level = 'level 1') {
+        //     if ($userWidthrawAmount >= 99) {
+        //         return redirect()->back()->with('error', 'You can only widthraw 100 rupees on level 1');
+        //     }
+        // } elseif ($user_level != 'level 1') {
+        //     if ($userWidthrawAmount >= 299) {
+        //         return redirect()->back()->with('error', 'You can only widthraw 300 rupees.');
+        //     }
+        // }
 
-        if ($userWidthrawAmount > auth()->user()->balance) {
-            return redirect()->back()->with('error', 'You have not enough balance');
-        }
+        // if ($userWidthrawAmount > auth()->user()->balance) {
+        //     return redirect()->back()->with('error', 'You have not enough balance');
+        // }
 
-        $widthraw = new WidthrawEarning();
-        $widthraw->user_id = auth()->user()->id;
-        $widthraw->widthraw_bank = $validated['widthraw_bank'];
-        $widthraw->widthraw_amount = $validated['widthraw_amount'];
-        $widthraw->widthraw_name = $validated['widthraw_name'];
-        $widthraw->widthraw_num = $validated['widthraw_num'];
-        $widthraw->save();
+        // $widthraw = new WidthrawEarning();
+        // $widthraw->user_id = auth()->user()->id;
+        // $widthraw->widthraw_bank = $validated['widthraw_bank'];
+        // $widthraw->widthraw_amount = $validated['widthraw_amount'];
+        // $widthraw->widthraw_name = $validated['widthraw_name'];
+        // $widthraw->widthraw_num = $validated['widthraw_num'];
+        // $widthraw->save();
     }
 }

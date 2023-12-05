@@ -800,7 +800,7 @@
         </div>
         {{-- Total earning Widthraw --}}
         <div class="container withdraw-container  hidden mt-2" id="total_earning">
-            <h2 style="margin-top:-30px;" class="text-center">Withdraw</h2>
+            <h2 style="margin-top:-30px;" class="text-center">Total Withdraw</h2>
 
             <!-- Current Balance -->
             <div class="mb-3">
@@ -996,18 +996,7 @@
 
         function total_earning() {
             var mycontact = document.getElementById('total_earning');
-            mycontact.classList.remove('hidden');
-            mycontact.style.display = 'block';
-            document.getElementById('dashboardInfo').style.display = 'none';
-            document.getElementById('team').style.display = 'none';
-            document.getElementById('withdraw').style.display = 'none';
-            document.getElementById('work').style.display = 'none';
-            document.getElementById('profile').style.display = 'none';
-            document.getElementById('settings').style.display = 'none';
-            document.getElementById('contact').style.display = 'none';
-            document.getElementById('total_earning').style.display = 'block';
-            document.getElementById('reward').style.display = 'none';
-            document.getElementById('top_users').style.display = 'none';
+           return alert('You cannot widthraw untill your level becomes 10')
         }
 
         function showReward() {
