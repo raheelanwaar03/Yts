@@ -602,7 +602,6 @@
         {{-- withdraw --}}
         <div class="container withdraw-container  hidden mt-2" id="withdraw">
             <h2 style="margin-top:-30px;" class="text-center">Withdraw</h2>
-
             <!-- Current Balance -->
             <div class="mb-3">
                 <label for="currentBalance">Current Balance:</label>
@@ -667,6 +666,12 @@
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}"
+                        readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="plan">Plan:</label>
+                    <input type="text" class="form-control" id="plan" value="{{ Auth::user()->plan }}"
                         readonly>
                 </div>
 
@@ -799,7 +804,7 @@
 
             <!-- Current Balance -->
             <div class="mb-3">
-                <label for="currentBalance">Current Balance:</label>
+                <label for="currentBalance">Total Earning:</label>
                 <input type="text" class="form-control" id="currentBalance" value="{{ today_earning() }}" readonly>
             </div>
 
@@ -920,6 +925,7 @@
             document.getElementById('dashboardInfo').style.display = 'none';
             document.getElementById('team').style.display = 'none';
             document.getElementById('work').style.display = 'none';
+            document.getElementById('widthraw').style.display = 'block';
             document.getElementById('profile').style.display = 'none';
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
