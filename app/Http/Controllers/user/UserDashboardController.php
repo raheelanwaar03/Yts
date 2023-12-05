@@ -17,8 +17,9 @@ class UserDashboardController extends Controller
         $team_count = User::where('referal', auth()->user()->id)->orderBy('id', 'desc')->count();
         $widthrawH_history = WidthrawBalance::where('status', 'approved')->where('user_id', auth()->user()->id)->get();
         $withdraw_total = WidthrawBalance::where('status', 'approved')->where('user_id', auth()->user()->id)->sum('widthraw_amount');
-        $daily_task = DailyTask::where('level', auth()->user()->level)->where('plan', auth()->user()->plan)->get();
-        $data = compact('team', 'team_count', 'widthrawH_history', 'withdraw_total', 'daily_task');
+        $daily_reward = DailyTask::where('level', auth()->user()->level)->where('plan', auth()->user()->plan)->get();
+        $daily_task = AdminProductModel::get();
+        $data = compact('team', 'team_count', 'widthrawH_history', 'withdraw_total', 'daily_task', 'daily_reward');
         return view('user.dashboard')->with($data);
     }
 

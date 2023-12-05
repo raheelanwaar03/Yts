@@ -63,7 +63,8 @@
                                         <div class="author-body">
                                             <ul>
                                                 <li>
-                                                    <a href="{{ route('profile.edit') }}" class="text-seconday"><i class="fas fa-user-edit"></i>Edit
+                                                    <a href="{{ route('profile.edit') }}" class="text-seconday"><i
+                                                            class="fas fa-user-edit"></i>Edit
                                                         Profile</a>
                                                 </li>
                                                 <li>
@@ -98,13 +99,12 @@
                 <hr>
                 <div class="col-md-12">
                     <div class="card">
-                        <form action="{{ route('Admin.Daily_task.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('Admin/store-reward') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                            <label for="" class="m-3">Title</label>
-                            <input type="text" name="title" class="form-group" placeholder="Add Product Title">
+                                <label for="" class="m-3">Link</label>
+                                <input type="text" name="link" class="form-group" placeholder="Add Product Title">
                             </div>
-                            
                             <div class="form-group">
                                 <label for="" class="m-3">Product Description</label>
                                 <textarea name="description" class="form-control" rows="7" placeholder="Enter Product Details"></textarea>

@@ -613,10 +613,36 @@
                 <input type="submit" class="btn btn-primary" name="submit">
             </form>
         </div>
-        {{-- todays work --}}
+        {{-- Todays work --}}
         <div class="container work-container hidden mt-2" id="work">
+            <h4 style="margin-top:-30px;" class="text-center">Today's Task</h4>
+            <table class="table table-bordered  table-sm text-center">
+                <thead>
+
+                    <tr class="text-dark" style="background-color: rgb(255, 132, 110)">
+                        <th scope="col">#</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Discription</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($daily_task as $dt)
+                        <tr>
+                            <th scope="row">{{ $dt->id }}</th>
+                            <td><a href="#"
+                                    onclick="window.open('{{ $dt->link }}', '_blank')">{{ $dt->link }}</a></td>
+                            <td>{{ $dt->description }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        {{-- Daily reward --}}
+
+        <div class="container work-container hidden mt-2" id="reward">
             <div class="d-flex justify-content-around align-items-center">
-                <h4 style="margin-top:-30px;" class="text-center">Today's Work</h4>
+                <h4 style="margin-top:-30px;" class="text-center">Daily Reward</h4>
                 <h5 style="margin-top:-30px;color:black;">Earning({{ today_earning() }})
                     <a href="#" style="color:black;text-decoration:none;" class="btn btn-primary"
                         onclick="total_earning();">Widthraw</a>
@@ -643,6 +669,7 @@
                 </tbody>
             </table>
         </div>
+
         {{-- contact us --}}
         <div class="text-center hidden" id="contact">
             contact us
@@ -728,6 +755,9 @@
             <a href="#" onclick="showWork();"><i class="fas fa-tasks "></i>
                 <div>Today's Work</div>
             </a>
+            <a href="#" onclick="showReward();"><i class="fa fa-check-circle"></i>
+                <div>Daily Reward</div>
+            </a>
             <a href="#" class="toggle-links"><i class="fas fa-bars"></i>
                 <div id="moreLessLabel">More</div>
             </a>
@@ -768,6 +798,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showTeam() {
@@ -781,6 +812,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showWithdraw() {
@@ -794,6 +826,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showWork() {
@@ -807,6 +840,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showProfile() {
@@ -820,6 +854,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showSettings() {
@@ -833,6 +868,7 @@
             document.getElementById('profile').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
         }
 
         function showContact() {
@@ -861,6 +897,22 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'block';
+            document.getElementById('reward').style.display = 'none';
+        }
+
+        function showReward() {
+            var mycontact = document.getElementById('reward');
+            mycontact.classList.remove('hidden');
+            mycontact.style.display = 'block';
+            document.getElementById('dashboardInfo').style.display = 'none';
+            document.getElementById('team').style.display = 'none';
+            document.getElementById('withdraw').style.display = 'none';
+            document.getElementById('work').style.display = 'none';
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('settings').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'block';
         }
 
 

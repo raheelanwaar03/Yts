@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\AdminProductModel;
 use Illuminate\Http\Request;
 use App\Models\DailyTask;
 
@@ -38,10 +39,18 @@ class DailyTaskController extends Controller
         return redirect()->back()->with('success', 'Task Added successfully');
     }
 
-    public function show($id)
+    public function reward()
     {
-        // $product = AdminProductModel::find($id);
+        return view('admin.dailytask.add');
+    }
 
+    public function storeReward(Request $request)
+    {
+        $task = new AdminProductModel();
+        $task->link = $request->link;
+        $task->description = $request->description;
+        $task->save();
+        return redirect()->back()->with('success','Task Added successfully');
     }
 
     public function edit($id)

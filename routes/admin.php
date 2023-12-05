@@ -47,6 +47,8 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     // add product routes
     Route::resource('Product', ProductController::class);
     Route::get('/daily-task', [DailyTaskController::class, 'index']);
+    Route::get('/daily-reward', [DailyTaskController::class, 'reward']);
+    Route::post('/store-reward', [DailyTaskController::class, 'storeReward']);
     Route::post('/daily-task-store', [DailyTaskController::class, 'store']);
     Route::post('/daily-task-update/{id}', [DailyTaskController::class, 'update']);
     Route::get('/daily-task-delete/{id}', [DailyTaskController::class, 'destroy']);
