@@ -464,13 +464,108 @@
                     </div>
                 </div>
             </div>
-
             <div class="top-users"><i class="fas fa-users"></i><br>
-                <h3>Top Users</h3>
+                <h3><a href="#" onclick="topUsers();" class="text-dark">Top Users</a></h3>
             </div>
+        </div>
+        </div>
 
+        {{-- Top Users --}}
+
+        <div class="container work-container hidden mt-2" id="top_users">
+            <h4 style="margin-top:-30px;" class="text-center">Today's Task</h4>
+            <table class="table table-bordered  table-sm text-center">
+                <thead>
+
+                    <tr class="text-dark" style="background-color: rgb(255, 132, 110)">
+                        <th scope="col">Name</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h3>Roqia shafiq</h3>
+                        </td>
+                        <td>
+                            <h4>4680</h4>
+                        </td>
+                        <td>
+                            <h4>Level 10</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Muhammad Adil</h3>
+                        </td>
+                        <td>
+                            <h4>2630</h4>
+                        </td>
+                        <td>
+                            <h4>Level 7</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Ahmad Khan</h3>
+                        </td>
+                        <td>
+                            <h4>1005</h4>
+                        </td>
+                        <td>
+                            <h4>Level 6</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Atteq Ishfaq</h3>
+                        </td>
+                        <td>
+                            <h4>3200</h4>
+                        </td>
+                        <td>
+                            <h4>Level 9</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Noor bibi</h3>
+                        </td>
+                        <td>
+                            <h4>765</h4>
+                        </td>
+                        <td>
+                            <h4>Level 4</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Ansar Ali</h3>
+                        </td>
+                        <td>
+                            <h4>2215</h4>
+                        </td>
+                        <td>
+                            <h4>Level 8</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Muhammad Bilal</h3>
+                        </td>
+                        <td>
+                            <h4>1530</h4>
+                        </td>
+                        <td>
+                            <h4>Level 7</h4>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        </div>
+
+
         {{-- my team --}}
         <div class="container mt-2 hidden" style="overflow-y: auto !important" id="team">
             <div class="referral-container mt-2 mb-4">
@@ -565,7 +660,8 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}" readonly>
+                    <input type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"
+                        readonly>
                 </div>
 
                 <div class="form-group">
@@ -799,6 +895,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showTeam() {
@@ -813,6 +910,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showWithdraw() {
@@ -827,6 +925,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showWork() {
@@ -841,6 +940,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showProfile() {
@@ -855,6 +955,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showSettings() {
@@ -869,6 +970,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showContact() {
@@ -883,6 +985,7 @@
             document.getElementById('settings').style.display = 'none';
             document.getElementById('contact').style.display = 'block';
             document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function total_earning() {
@@ -898,6 +1001,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'block';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'none';
         }
 
         function showReward() {
@@ -913,6 +1017,23 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'block';
+            document.getElementById('top_users').style.display = 'none';
+        }
+
+        function topUsers() {
+            var mycontact = document.getElementById('top_users');
+            mycontact.classList.remove('hidden');
+            mycontact.style.display = 'block';
+            document.getElementById('dashboardInfo').style.display = 'none';
+            document.getElementById('team').style.display = 'none';
+            document.getElementById('withdraw').style.display = 'none';
+            document.getElementById('work').style.display = 'none';
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('settings').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('total_earning').style.display = 'none';
+            document.getElementById('reward').style.display = 'none';
+            document.getElementById('top_users').style.display = 'block';
         }
 
 
