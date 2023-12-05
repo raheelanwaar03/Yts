@@ -88,7 +88,7 @@
 
             <div class="payment-info">
               <h6 class="mt-2 mb-2">Welcome to YTSEARNING</h6>
-              <p>Kindly send Rs 450 to the following EasyPaisa number (03001234098) and provide the correct Transaction ID</p>
+              <p>Kindly send Rs 450 to the following EasyPaisa number (03001234098) with account title () and provide the correct Transaction ID</p>
             </div>
 
             <form action="{{ route('Store/Fees/Details') }}" method="post">
