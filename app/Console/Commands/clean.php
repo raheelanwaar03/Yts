@@ -45,7 +45,7 @@ class clean extends Command
         $easyPaisa->status = 1;
         $easyPaisa->save();
 
-        //    set level according to thier referal
+        //  set level according to thier referal
 
         $level = new ReferalLevel();
         $level->level1 = 10;
@@ -61,14 +61,16 @@ class clean extends Command
         $level->status = 1;
         $level->save();
 
-
         // Setting
 
         $setting = new Setting();
-        $setting->refer_amount = '50';
-        $setting->minimum_amount = '100';
+        $setting->minimum_amount = '50';
         $setting->maximun_amount = '500';
-        $setting->status = '1';
+        $setting->refer_amount = '100';
+        $setting->silver = '10';
+        $setting->gold = '20';
+        $setting->dimond = '30';
+        $setting->status = 1;
         $setting->save();
 
         $user = new User();

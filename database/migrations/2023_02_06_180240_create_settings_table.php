@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('refer_amount');
             $table->integer('minimum_amount');
             $table->integer('maximun_amount');
+            $table->string('silver');
+            $table->string('gold');
+            $table->string('dimond');
             $table->string('status')->default(0);
             $table->timestamps();
         });
