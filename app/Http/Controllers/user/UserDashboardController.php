@@ -27,7 +27,7 @@ class UserDashboardController extends Controller
 
     public function team()
     {
-        $users = User::where('referal', auth()->user()->username)->where('status', 'approved')->get();
+        $users = User::where('referal', auth()->user()->email)->where('status', 'approved')->get();
         return view('user.work.team', compact('users'));
     }
 

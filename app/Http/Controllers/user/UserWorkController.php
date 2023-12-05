@@ -73,11 +73,6 @@ class UserWorkController extends Controller
 
     public function widthrawTotalEarning(Request $request)
     {
-        $user_level = auth()->user()->level;
-        if ($user_level != 'level 10') {
-            return redirect()->back()->with('error', 'You cannot widthraw untill your level becomes 10');
-        }
-
         $validated = $request->validate([
             'widthraw_bank' => 'required',
             'widthraw_amount' => 'required',
