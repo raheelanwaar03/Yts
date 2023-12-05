@@ -671,7 +671,7 @@
 
                 <div class="form-group">
                     <label for="plan">Plan:</label>
-                    <input type="text" class="form-control" id="plan" value="{{ Auth::user()->plan }}"
+                    <input type="text" class="form-control" id="plan" value="{{ Auth::user()->plan }} Stars"
                         readonly>
                 </div>
 
