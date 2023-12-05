@@ -93,37 +93,17 @@
         </div>
         <div class="container-fluid">
             <div class="row justify-content-center mt--85">
-                <h2 class="text-center text-white">Set Limit</h2>
+                <h2 class="text-center text-white">Limits</h2>
                 <hr>
-                <div class="col-md-12">
-                    <div class="card">
-                        <form action="{{ route('Admin.Setting.store') }}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label for="" class="m-3">Referal Amount</label>
-                                <input type="text" name="refer_amount" class="form-group" placeholder="Refer Setting">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="m-3">Minimum Widthraw</label>
-                                <input type="text" name="minimum_amount" class="form-group"
-                                    placeholder="Minimum Widthraw">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="m-3">Maximum Widthraw</label>
-                                <input type="text" name="maximun_amount" class="form-group"
-                                    placeholder="Maximun Widthraw">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Set</button>
-                        </form>
-                    </div>
-                </div>
                 <div class="col-md-12 mt-4">
 
                     <h4 class="text-center my-4">Applied Settings</h4>
                     <table id="myTable" class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Referal Price</th>
+                                <th>One Star</th>
+                                <th>Two Stars</th>
+                                <th>Three Stars</th>
                                 <th>Minimum</th>
                                 <th>Maximum</th>
                                 <th>Action</th>
@@ -132,7 +112,9 @@
                         <tbody>
                             <tr>
                                 @forelse ($settings as $setting)
-                                    <td>{{ $setting->refer_amount }}</td>
+                                    <td>{{ $setting->silver }}</td>
+                                    <td>{{ $setting->gold }}</td>
+                                    <td>{{ $setting->dimond }}</td>
                                     <td>{{ $setting->minimum_amount }}</td>
                                     <td>{{ $setting->maximun_amount }}</td>
                                     <td><a href="{{ route('Admin.Setting.edit', $setting->id) }}"

@@ -66,7 +66,6 @@ class clean extends Command
         $setting = new Setting();
         $setting->minimum_amount = '50';
         $setting->maximun_amount = '500';
-        $setting->refer_amount = '100';
         $setting->silver = '10';
         $setting->gold = '20';
         $setting->dimond = '30';

@@ -101,9 +101,16 @@
                             @csrf
                             @method('put')
                             <div class="form-group">
-                                <label for="" class="m-3">Edit Refer Amount</label>
-                                <input type="text" name="refer_amount" value="{{ $setting->refer_amount }}"
-                                    class="form-group">
+                                <label for="" class="m-3">One Star</label>
+                                <input type="text" name="silver" value="{{ $setting->silver }}" class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="m-3">Two Star</label>
+                                <input type="text" name="gold" value="{{ $setting->gold }}" class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="m-3">Three Star</label>
+                                <input type="text" name="dimond" value="{{ $setting->dimond }}" class="form-group">
                             </div>
                             <div class="form-group">
                                 <label for="" class="m-3">Edit Minimum Widthraw</label>
