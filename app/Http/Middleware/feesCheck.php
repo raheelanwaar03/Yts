@@ -25,7 +25,7 @@ class feesCheck
         }
         if(auth()->user()->status == 'pending')
         {
-            return redirect()->back('')->with('error','Please wait for your Account Approval Or Pay your Registeration Fees');
+            return redirect()->route('LandingPage')->with('error','Please wait for your Account Approval Or Pay your Registeration Fees');
         }
     }
 }

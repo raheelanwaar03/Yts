@@ -17,6 +17,11 @@ class landingPageController extends Controller
         return view('LandingPage.welcome');
     }
 
+    public function waiting()
+    {
+        return view('auth.waiting');
+    }
+
     public function contact()
     {
         return view('LandingPage.contact');

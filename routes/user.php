@@ -20,7 +20,6 @@ Route::name('User.')->prefix('User')->middleware('user','auth','feesCheck')->gro
         Route::post('/Widthraw/Total/Earning',[UserWorkController::class,'widthrawTotalEarning'])->name('Widthraw.Total.Earning');
         Route::post('/Deposit/Balance/Request',[UserWorkController::class,'deposit'])->name('Deposit.Request');
         // giving commission on review and surve
-
         Route::get('Review/Product/{id}',[SurveyProductRewaradController::class,'index'])->name('Product.Reward');
 
     });
