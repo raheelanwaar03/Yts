@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\admin\EasyPaisaMangement;
 use App\Models\admin\Setting;
 use App\Models\User;
+use App\Models\user\ReferalLevel;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
@@ -43,6 +44,23 @@ class clean extends Command
         $easyPaisa->easy_num = '9999999999';
         $easyPaisa->status = 1;
         $easyPaisa->save();
+
+        //    set level according to thier referal
+
+        $level = new ReferalLevel();
+        $level->level1 = 10;
+        $level->level2 = 20;
+        $level->level3 = 30;
+        $level->level4 = 40;
+        $level->level5 = 50;
+        $level->level6 = 60;
+        $level->level7 = 70;
+        $level->level8 = 80;
+        $level->level9 = 90;
+        $level->level10 = 100;
+        $level->status = 1;
+        $level->save();
+
 
         // Setting
 

@@ -102,9 +102,12 @@
                                 <th>Id</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Phone</th>
                                 <th>Level</th>
-                                <th>TrxID</th>
+                                <th>Phone</th>
+                                <th>Package</th>
+                                <th>Referral</th>
+                                <th>Trx Id</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -113,12 +116,17 @@
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->id }}</td>
-                                    <td>{{ $user->username }}</td>
+                                    <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
                                     <td>{{ $user->level }}</td>
-                                    <td>{{ $user->trxIds->tid ?? 'unpaid user'}}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->plan }}</td>
+                                    <td>{{ $user->referal }}</td>
+                                    <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->status }}</td>
                                     <td>
+                                        <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
+                                            class="btn btn-sm btn-success">Approved</a>
                                         <a href="{{ route('Admin.Rejected.User.Account.Request', ['id' => $user->id]) }}"
                                             class="btn btn-sm btn-primary">Reject</a>
                                         <a href="{{ route('Admin.Edit.User', ['id' => $user->id]) }}"

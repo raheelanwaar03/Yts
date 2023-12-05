@@ -54,10 +54,7 @@ class AdminDashboardController extends Controller
     public function updateUser(Request $request, $id)
     {
         $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
         $user->level = $request->level;
-        $user->email = $request->email;
         $user->balance = $request->balance;
         $user->save();
         return redirect()->back()->with('success', 'User Details updated successfully');

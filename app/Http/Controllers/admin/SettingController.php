@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Setting;
+use App\Models\user\ReferalLevel;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -15,8 +16,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $settings = Setting::where('status',1)->get();
-        return view('admin.dashboard.setting',compact('settings'));
+        $settings = Setting::where('status', 1)->get();
+        return view('admin.dashboard.setting', compact('settings'));
     }
 
     /**
@@ -44,8 +45,7 @@ class SettingController extends Controller
         $setting->minimum_amount = $validated['minimum_amount'];
         $setting->maximun_amount = $validated['maximun_amount'];
         $setting->save();
-        return redirect()->back()->with('succss','New Setting Appllied');
-
+        return redirect()->back()->with('succss', 'New Setting Appllied');
     }
 
     /**
@@ -68,7 +68,7 @@ class SettingController extends Controller
     public function edit($id)
     {
         $setting = Setting::find($id);
-        return view('admin.dashboard.editSetting',compact('setting'));
+        return view('admin.dashboard.editSetting', compact('setting'));
     }
 
     /**
@@ -85,7 +85,7 @@ class SettingController extends Controller
         $setting->minimum_amount = $request->minimum_amount;
         $setting->maximun_amount = $request->maximun_amount;
         $setting->save();
-        return redirect()->back()->with('success','Setting updated successfully');
+        return redirect()->back()->with('success', 'Setting updated successfully');
     }
 
     /**
@@ -97,5 +97,34 @@ class SettingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function allLevels()
+    {
+        $levels = ReferalLevel::where('status', 1)->get();
+        return view('admin.setting.level', compact('levels'));
+    }
+
+    public function editLevel($id)
+    {
+        $level = ReferalLevel::find($id);
+        return view('admin.setting.editlevel');
+    }
+
+    public function updateLevel(Request $request, $id)
+    {
+        $level = ReferalLevel::find($id);
+        $level->level1 = $request->level1;
+        $level->level2 = $request->level2;
+        $level->level3 = $request->level3;
+        $level->level4 = $request->level4;
+        $level->level5 = $request->level5;
+        $level->level6 = $request->level6;
+        $level->level7 = $request->level7;
+        $level->level8 = $request->level8;
+        $level->level9 = $request->level9;
+        $level->level10 = $request->level10;
+        $level->save();
+        return redirect()->back()->with('success', 'Level Changed successfully');
     }
 }

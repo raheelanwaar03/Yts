@@ -534,6 +534,10 @@
                     <a href="{{ asset('Admin/Email') }}"><button
                             class="btn btn-primary btn-lg w-100 btn-block custom-button">Email Setting</button></a>
                 </div>
+                <div class="col-12  col-md-6">
+                    <a href="{{ route('Admin.All.Levels') }}"><button
+                            class="btn btn-primary btn-lg w-100 btn-block custom-button">Level Setting</button></a>
+                </div>
             </div>
         </div>
         {{-- Product

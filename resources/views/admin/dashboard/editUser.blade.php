@@ -100,11 +100,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="" class="ml-2">Username</label>
-                                <input type="text" name="username" value="{{ $user->username }}" class="form-control" readonly>
-                            </div
-                            <div class="form-group">
-                                <label for="" class="ml-2">Phone</label>
-                                <input type="text" name="name" value="{{ $user->phone }}" class="form-control" readonly>
+                                <input type="text" name="name" value="{{ $user->name }}" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="" class="ml-2">Email</label>
