@@ -31,9 +31,7 @@ class UserWorkController extends Controller
             'widthraw_name' => 'required',
             'widthraw_num' => 'required',
         ]);
-        $userWidthrawAmount = $validated['widthraw_amount'];
-        // Checking user level
-
+        $userWidthrawAmount = $validated['widthraw_amount'];=
         // See user balance
 
         if ($userWidthrawAmount > auth()->user()->balance) {

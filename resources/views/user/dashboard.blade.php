@@ -746,7 +746,7 @@
                 <h4 style="margin-top:-30px;" class="text-center">Daily Reward</h4>
                 <h5 style="margin-top:-30px;color:black;">Earning({{ today_earning() }})
                     <a href="#" style="color:black;text-decoration:none;" class="btn btn-primary"
-                        onclick="total_earning();">Widthraw</a>
+                        id="earning_widthraw">Widthraw</a>
                 </h5>
             </div>
             <table class="table table-bordered  table-sm text-center">
@@ -882,7 +882,7 @@
 
 @section('js')
     <script>
-        document.getElementById('withdrawButton').addEventListener('click', function() {
+        document.getElementById('earning_widthraw').addEventListener('click', function() {
             var userLevel = 5; // Replace this with the actual user's level
 
             if (userLevel < 10) {
@@ -996,7 +996,7 @@
 
         function total_earning() {
             var mycontact = document.getElementById('total_earning');
-           return alert('You cannot widthraw untill your level becomes 10')
+            return alert('You cannot widthraw untill your level becomes 10')
         }
 
         function showReward() {
