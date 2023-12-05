@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\EasyPaisaMangement;
 use App\Models\FeesCollecator;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class RegisterationFeesController extends Controller
         // }
         // else
 
-        return view('auth.registerationFees');
+        $easyPaisa = EasyPaisaMangement::where('status', 1)->first();
+        return view('auth.registerationFees',compact('easyPaisa'));
     }
 
     public function feesDetailStore(Request $request)

@@ -104,7 +104,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="" class="m-3">Easypaisa Username</label>
-                                <input type="text" name="easy_name" class="form-group" placeholder="Easypaisa Username">
+                                <input type="text" name="easy_name" class="form-group" placeholder="Admin add Easypaisa Username">
                             </div>
                             <button type="submit" class="btn btn-primary">add</button>
                         </form>
