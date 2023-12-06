@@ -30,7 +30,7 @@ function rejectedUsers()
 
 function totalReferFriends()
 {
-    $user = User::where('referal', auth()->user()->username)->where('status','approved')->get()->count();
+    $user = User::where('referal', auth()->user()->email)->where('status','approved')->get()->count();
     return $user;
 }
 
@@ -49,7 +49,7 @@ function userWidthrawalBalance()
 
 function level()
 {
-    $users = User::where('referal', auth()->user()->username)->get();
+    $users = User::where('referal', auth()->user()->email)->get();
     $userRefer = $users->count();
     return $userRefer;
 }
