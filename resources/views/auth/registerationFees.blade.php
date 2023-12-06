@@ -89,7 +89,8 @@
 
         <div class="payment-info">
             <h6 class="mt-2 mb-2">Welcome to YTSEARNING</h6>
-            <p>Kindly send Rs 450 to the following EasyPaisa number ({{ $easyPaisa->easy_num }}) with account title
+            <p>Kindly send the package amount you selected to the following EasyPaisa number ({{ $easyPaisa->easy_num }})
+                with account title
                 ({{ $easyPaisa->easy_name }}) and provide the
                 correct Transaction ID</p>
         </div>
