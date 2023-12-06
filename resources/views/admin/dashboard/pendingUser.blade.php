@@ -124,7 +124,7 @@
                                     <td>{{ $user->plan }}</td>
                                     <td>{{ $user->referal }}</td>
                                     <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
-                                    <td>{{ $user->trxIds->sender_num }}</td>
+                                    <td>{{ $user->trxIds->bank_username }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
