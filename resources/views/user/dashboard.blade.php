@@ -573,8 +573,7 @@
                     <div class="col-6"> <input type="text"
                             value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="referralLink" readonly>
                     </div>
-                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Copy Referral
-                            Link</button></div>
+                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Share Link</button></div>
                 </div>
             </div>
             <div class="text-center">
@@ -870,9 +869,10 @@
             <a href="#" class="aa" onclick="showContact();"><i class="fas fa-envelope"></i>
                 <div>Contact Us</div>
             </a>
-            <form action="{{ asset('logout') }}" method="post" class="mr-2">@csrf
-                <input class="aa" type="submit" value="Logout"
-                    style="font-weight: 400;padding-left:10px !important;padding-right:10px !important;">
+            <form action="{{ route('logout') }}" method="post" class="mr-2">
+                @csrf
+                <button type="submit"
+                    style="font-weight: 400;padding-left:10px !important;padding-right:10px !important;">Logout</button>
             </form>
         </nav>
     </footer>
