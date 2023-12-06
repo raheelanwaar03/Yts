@@ -577,7 +577,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <h2 style="margin-top:-10px;">Total Team: {{ $team_count }}</h2>
+                <h2 style="margin-top:-10px;">Total Team: {{ totalReferFriends() }}</h2>
             </div>
             <table class="table table-bordered  table-sm">
                 <thead>
