@@ -106,6 +106,7 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
+                                <th>Username</th>
                                 <th>Trx Id</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -123,6 +124,7 @@
                                     <td>{{ $user->plan }}</td>
                                     <td>{{ $user->referal }}</td>
                                     <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->trxIds->sender_num }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"

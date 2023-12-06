@@ -93,16 +93,16 @@
                 <div class="form-group">
                     <label for="" class="m-3">Select Level</label>
                     <select name="level" class="form-control">
-                        <option value="level 1">Level 1</option>
-                        <option value="level 2">Level 2</option>
-                        <option value="level 3">Level 3</option>
-                        <option value="level 4">Level 4</option>
-                        <option value="level 5">Level 5</option>
-                        <option value="level 6">Level 6</option>
-                        <option value="level 7">Level 7</option>
-                        <option value="level 8">Level 8</option>
-                        <option value="level 9">Level 9</option>
-                        <option value="level 10">Level 10</option>
+                        <option value="Level 1">Level 1</option>
+                        <option value="Level 2">Level 2</option>
+                        <option value="Level 3">Level 3</option>
+                        <option value="Level 4">Level 4</option>
+                        <option value="Level 5">Level 5</option>
+                        <option value="Level 6">Level 6</option>
+                        <option value="Level 7">Level 7</option>
+                        <option value="Level 8">Level 8</option>
+                        <option value="Level 9">Level 9</option>
+                        <option value="Level 10">Level 10</option>
                     </select>
                 </div>
                 <div class="form-group">
