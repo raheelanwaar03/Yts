@@ -121,12 +121,12 @@ class AdminDashboardController extends Controller
         $silverThirdCommission = $silver * 5 / 100;
         // getting gold commission
         $gold = $setting->gold;
-        $goldSecondCommission = $gold * 15 / 100;
-        $goldThirdCommission = $gold * 5 / 100;
+        $goldSecondCommission = $gold * 20 / 100;
+        $goldThirdCommission = $gold * 6 / 100;
         // Getting dimond Commissions
         $dimond = $setting->dimond;
-        $dimondSecondCommission = $dimond * 15 / 100;
-        $dimondThirdCommission = $dimond * 5 / 100;
+        $dimondSecondCommission = $dimond * 30 / 100;
+        $dimondThirdCommission = $dimond * 7 / 100;
 
         $user = User::find($id);
         $user->status = 'approved';

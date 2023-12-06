@@ -30,13 +30,12 @@ class RegisterationFeesController extends Controller
         // else
 
         $easyPaisa = EasyPaisaMangement::where('status', 1)->first();
-        return view('auth.registerationFees',compact('easyPaisa'));
+        return view('auth.registerationFees', compact('easyPaisa'));
     }
 
     public function feesDetailStore(Request $request)
     {
         $validated = $request->validate([
-            // 'bank' => 'required',
             'tid' => 'required',
             'sender_num' => 'required',
             'bank_username' => 'required',
@@ -67,6 +66,8 @@ class RegisterationFeesController extends Controller
         }
 
         $user = User::where('id', auth()->user()->id)->first();
+        $user->status = 'pending';
+        $user->save();
 
         $feesDetails = new FeesCollecator();
         $feesDetails->user_id = auth()->user()->id;
