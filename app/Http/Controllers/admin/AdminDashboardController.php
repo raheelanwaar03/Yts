@@ -214,7 +214,7 @@ class AdminDashboardController extends Controller
             }
         }
 
-        if ($userPlan == 'gold') {
+        if ($userPlan == 2) {
             $firstUpliner = User::where('email', $user->referal)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
                 return redirect()->back()->with('massage', 'Account has beed Approved successfully');
@@ -294,7 +294,7 @@ class AdminDashboardController extends Controller
             }
         }
 
-        if ($userPlan == 'dimond') {
+        if ($userPlan == 3) {
             $firstUpliner = User::where('email', $user->referal)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
                 return redirect()->back()->with('massage', 'Account has beed Approved successfully');
