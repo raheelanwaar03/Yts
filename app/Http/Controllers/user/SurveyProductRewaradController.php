@@ -15,9 +15,9 @@ class SurveyProductRewaradController extends Controller
     {
         $product = DailyTask::find($id);
         $productRewarad = $product->price;
-        return $productRewarad;
 
-        $visitor = Vistor::where('user_id', auth()->user()->id)->where('product_id', $id)->whereDate('created_at', '=', Carbon::today())->first();
+        $visitor = Vistor::where('user_id', auth()->user()->id)->whereDate('created_at', '=', Carbon::today())->first();
+        return $visitor;
         if (!$visitor) {
             //     // storing product
             $visitor = new Vistor();
