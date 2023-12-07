@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('daily_task', function (Blueprint $table) {
             $table->id();
             $table->string('link');
-            $table->string('price');
+            $table->integer('price');
             $table->string('description');
             $table->string('plan');
             $table->string('level');

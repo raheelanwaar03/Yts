@@ -13,8 +13,9 @@ class SurveyProductRewaradController extends Controller
 {
     public function index($id)
     {
-        $product = AdminProductModel::find($id);
-        $procutRewarad = $product->price;
+        $product = DailyTask::find($id);
+        $productRewarad = $product->price;
+        return $productRewarad;
 
         $visitor = Vistor::where('user_id', auth()->user()->id)->where('product_id', $id)->whereDate('created_at', '=', Carbon::today())->first();
         if (!$visitor) {
@@ -22,7 +23,7 @@ class SurveyProductRewaradController extends Controller
             $visitor = new Vistor();
             $visitor->user_id = auth()->user()->id;
             $visitor->product_id = $id;
-            $visitor->amount += $procutRewarad;
+            $visitor->amount += $productRewarad;
             $visitor->ip = request()->ip();
             $visitor->dateTime = date(now());
             $visitor->save();
