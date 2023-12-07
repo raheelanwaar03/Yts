@@ -139,8 +139,10 @@
                     <thead>
                         <tr class="">
                             <th>Id</th>
-                            <th>link</th>
-                            <th>price</th>
+                            <th>Link</th>
+                            <th>Price</th>
+                            <th>Plan</th>
+                            <th>Level</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
@@ -152,6 +154,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $dt->link }}</td>
                                 <td>{{ $dt->price }}</td>
+                                <td>{{ $dt->plan }}</td>
+                                <td>{{ $dt->level }}</td>
                                 <td>{{ $dt->description }}</td>
                                 <td class="d-flex justify-content-center align-items-center">
                                     <a href="{{ asset('Admin/daily-task-edit') . '/' . $dt->id }}"

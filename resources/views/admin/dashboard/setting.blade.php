@@ -98,7 +98,7 @@
                 <div class="col-md-12 mt-4">
 
                     <h4 class="text-center my-4">Applied Settings</h4>
-                    <table id="myTable" class="table table-bordered">
+                    <table id="myTable" class="table table-bordered table-responsive ">
                         <thead>
                             <tr>
                                 <th>One Star</th>

@@ -757,7 +757,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($daily_task as $dt)
+                    @foreach ($daily_reward as $dt)
                         <tr>
                             <th scope="row">{{ $dt->id }}</th>
                             <td><a href="{{ route('User.Product.Reward', ['id' => $dt->id]) }}"
