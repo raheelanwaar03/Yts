@@ -728,7 +728,7 @@
                     @foreach ($daily_task as $dt)
                         <tr>
                             <th scope="row">{{ $dt->id }}</th>
-                            <td><a href="#"
+                            <td><a href="{{ route('User.Product.Reward', ['id' => $dt->id]) }}"
                                     onclick="window.open('{{ $dt->link }}', '_blank')">{{ $dt->link }}</a></td>
                             <td>{{ $dt->description }}</td>
                         </tr>

@@ -494,12 +494,7 @@
         <div class="container  hidden " id="withdraw">
             <div class="col-12  col-md-12">
                 <a href="{{ asset('Admin/daily-task') }}"><button
-                        class="btn btn-primary btn-lg w-100 btn-block custom-button">Click Here To Go To Daily
-                        Reward</button></a>
-            </div>
-            <div class="col-12 col-md-12">
-                <a href="{{ asset('Admin/daily-reward') }}"><button
-                        class="btn btn-primary btn-lg w-100 btn-block custom-button text-black">Add Todays Task</button></a>
+                        class="btn btn-primary btn-lg w-100 btn-block custom-button">Add Tasks</button></a>
             </div>
         </div>
         {{-- Withdraw --}}

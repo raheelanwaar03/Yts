@@ -114,6 +114,13 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="" class="m-3">Type</label>
+                    <select name="type" class="form-control">
+                        <option value="reward">Reward</option>
+                        <option value="task">Task</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="" class="m-3">Link</label>
                     <input type="text" name="link" class="form-group" placeholder="Add Link">
                 </div>
@@ -143,11 +150,11 @@
                             <th>Price</th>
                             <th>Plan</th>
                             <th>Level</th>
+                            <th>Type</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         @foreach ($daily_task as $dt)
                             <tr>
@@ -156,6 +163,7 @@
                                 <td>{{ $dt->price }}</td>
                                 <td>{{ $dt->plan }}</td>
                                 <td>{{ $dt->level }}</td>
+                                <td>{{ $dt->type }}</td>
                                 <td>{{ $dt->description }}</td>
                                 <td class="d-flex justify-content-center align-items-center">
                                     <a href="{{ asset('Admin/daily-task-edit') . '/' . $dt->id }}"

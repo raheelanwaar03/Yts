@@ -26,6 +26,7 @@ class DailyTaskController extends Controller
             'price' => 'required',
             'level' => 'required',
             'plan' => 'required',
+            'type' => 'required',
 
         ]);
 
@@ -35,6 +36,7 @@ class DailyTaskController extends Controller
         $product->price = $validated['price'];
         $product->level = $validated['level'];
         $product->plan = $validated['plan'];
+        $product->type = $validated['type'];
         $product->save();
         return redirect()->back()->with('success', 'Task Added successfully');
     }

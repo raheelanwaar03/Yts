@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('plan');
             $table->string('level');
+            $table->string('type');
             $table->timestamps();
         });
     }
