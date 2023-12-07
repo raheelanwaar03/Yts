@@ -17,7 +17,6 @@ class SurveyProductRewaradController extends Controller
         $productRewarad = $product->price;
 
         $visitor = Vistor::where('user_id', auth()->user()->id)->whereDate('created_at', '=', Carbon::today())->first();
-        return $visitor;
         if (!$visitor) {
             //     // storing product
             $visitor = new Vistor();
