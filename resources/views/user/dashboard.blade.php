@@ -160,8 +160,8 @@
             }
 
             /* Style for the last four links to force them in one line */
-            footer nav a:nth-last-child(-n + 4) {
-                width: 25%;
+            footer nav a:nth-last-child(-n + 5) {
+                width: 20%;
                 /* Adjust width to fit four links in one row with some spacing */
             }
 
@@ -639,7 +639,7 @@
             </form>
 
             <!-- Withdrawal History -->
-            <div class="withdraw-history my-5">
+            <div class="withdraw-history mb-4" style="margin-bottom: -50px">
                 <h3 class="text-center">Withdrawal History</h3>
                 @foreach ($widthrawH_history as $wh)
                     <ul class="list-group">
@@ -846,7 +846,7 @@
             <a href="#" onclick="showDashboard();"><i class="fas fa-home"></i>
                 <div>Home</div>
             </a>
-            <a href="#" onclick="showTeam();"><i class="fas fa-users"></i>
+            <a href="#" class="aa" onclick="showTeam();"><i class="fas fa-users"></i>
                 <div>My Team</div>
             </a>
             <a href="#" onclick="showWithdraw();"><i class="fas fa-money-bill"></i>
@@ -870,11 +870,6 @@
             <a href="#" class="aa" onclick="showContact();"><i class="fas fa-envelope"></i>
                 <div>Contact Us</div>
             </a>
-            <form action="{{ route('logout') }}" method="post" class="mr-2">
-                @csrf
-                <button type="submit"
-                    style="font-weight: 400;padding-left:10px !important;padding-right:10px !important;">Logout</button>
-            </form>
         </nav>
     </footer>
 @endsection
@@ -976,6 +971,7 @@
             document.getElementById('contact').style.display = 'none';
             document.getElementById('total_earning').style.display = 'none';
             document.getElementById('reward').style.display = 'none';
+            document.getElementById('settings').style.display = 'block';
             document.getElementById('top_users').style.display = 'none';
         }
 
@@ -1041,8 +1037,7 @@
                     var aaElements = document.querySelectorAll('.aa');
 
                     aaElements.forEach(function(element) {
-                        if (element.style.display === 'none' || element.style.display ===
-                            '') {
+                        if (element.style.display === 'none' || element.style.display ==='') {
                             element.style.display = 'block';
                         } else {
                             element.style.display = 'none';
