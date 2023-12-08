@@ -446,7 +446,7 @@
             <div class="card-container">
                 <div class="card">
                     <div class="row">
-                        <div class="col-6"><i class="fas fa-usd-dollar"></i></div>
+                        <div class="col-6"><i class="fas fa-dollar-sign"></i></div>
                         <div class="col-6">
                             <h6> Current Balance</h6>
                             <h2>PKR <b>{{ Auth::user()->balance }}</b></h2>
