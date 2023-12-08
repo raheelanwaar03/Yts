@@ -446,10 +446,10 @@
             <div class="card-container">
                 <div class="card">
                     <div class="row">
-                        <div class="col-6"><i class="fas fa-wallet"></i></div>
+                        <div class="col-6"><i class="fa-solid fa-dollar-sign"></i></div>
                         <div class="col-6">
                             <h6> Current Balance</h6>
-                            <h2>PKR {{ Auth::user()->balance }}</h2>
+                            <h2>PKR <b>{{ Auth::user()->balance }}</b></h2>
                         </div>
                     </div>
                 </div>
@@ -573,7 +573,8 @@
                     <div class="col-6"> <input type="text"
                             value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="referralLink" readonly>
                     </div>
-                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Share Link</button></div>
+                    <div class="col-6"> <button onclick="copyReferralLink()" class="btn btn-primary">Share Link</button>
+                    </div>
                 </div>
             </div>
             <div class="text-center">
@@ -638,7 +639,7 @@
             </form>
 
             <!-- Withdrawal History -->
-            <div class="withdraw-history">
+            <div class="withdraw-history my-3">
                 <h3 class="text-center">Withdrawal History</h3>
                 @foreach ($widthrawH_history as $wh)
                     <ul class="list-group">
