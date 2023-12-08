@@ -81,7 +81,7 @@
                 <h3> <a href="/Admin/Dashboard"> Go Back to Home</a></h3>
                 <ul class="">
                     <li>
-                        All Tasks
+                        Add Fake Users
                     </li>
                 </ul>
             </div>
@@ -93,7 +93,7 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="" class="m-3">Name</label>
-                        <input type="number" name="name" class="form-group" placeholder="Add Link Price">
+                        <input type="text" name="name" class="form-group" placeholder="Add User Name">
                     </div>
                     <label for="" class="m-3">Select Level</label>
                     <select name="level" class="form-control">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Earnig</label>
-                    <input type="number" name="earning" class="form-group" placeholder="Add Link Price">
+                    <input type="number" name="earning" class="form-group" placeholder="Add fake Earning">
                 </div>
                 <button type="submit" class="btn btn-primary">Enter</button>
             </form>
@@ -129,7 +129,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h2 class="text-center">All Tasks</h2>
+                <h2 class="text-center">User Setting</h2>
                 <hr>
                 <table id="myTable" class="table table-responsive table-bordered">
                     <thead>
