@@ -639,12 +639,12 @@
             </form>
 
             <!-- Withdrawal History -->
-            <div class="withdraw-history my-3">
+            <div class="withdraw-history my-5">
                 <h3 class="text-center">Withdrawal History</h3>
                 @foreach ($widthrawH_history as $wh)
                     <ul class="list-group">
                         <li class="list-group-item">Date: {{ date('d-m-Y', strtotime($wh->updated_at)) }} | Amount: Rs.
-                            {{ $wh->widthraw_amount }}</li>
+                            {{ $wh->widthraw_amount }} | Status: {{ $wh->status }}</li>
                         <!-- Add more history items as needed -->
                     </ul>
                 @endforeach
