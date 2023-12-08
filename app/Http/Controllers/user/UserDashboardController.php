@@ -16,7 +16,7 @@ class UserDashboardController extends Controller
     {
         $team = User::where('referal', auth()->user()->email)->where('status', 'approved')->orderBy('id', 'desc')->get();
         $team_count = User::where('referal', auth()->user()->id)->orderBy('id', 'desc')->count();
-        $widthrawH_history = WidthrawBalance::where('status', 'approved')->where('user_id', auth()->user()->id)->get();
+        $widthrawH_history = WidthrawBalance::where('user_id', auth()->user()->id)->get();
         $withdraw_total = WidthrawBalance::where('status', 'approved')->where('user_id', auth()->user()->id)->sum('widthraw_amount');
         $daily_reward = DailyTask::where('level', auth()->user()->level)->where('type', 'reward')->where('plan', auth()->user()->plan)->get();
         $email_setting = EamilSetting::where('status', 1)->first();
