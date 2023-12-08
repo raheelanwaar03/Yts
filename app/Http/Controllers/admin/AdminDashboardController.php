@@ -117,16 +117,16 @@ class AdminDashboardController extends Controller
         $setting = Setting::where('status', 1)->first();
         // getting sliver Commission
         $silver = $setting->silver;
-        $silverSecondCommission = $silver * 15 / 100;
-        $silverThirdCommission = $silver * 5 / 100;
+        $silverSecondCommission = $silver * 3 / 100;
+        $silverThirdCommission = $silver * 1 / 100;
         // getting gold commission
         $gold = $setting->gold;
-        $goldSecondCommission = $gold * 20 / 100;
-        $goldThirdCommission = $gold * 6 / 100;
+        $goldSecondCommission = $gold * 3 / 100;
+        $goldThirdCommission = $gold * 1 / 100;
         // Getting dimond Commissions
         $dimond = $setting->dimond;
-        $dimondSecondCommission = $dimond * 30 / 100;
-        $dimondThirdCommission = $dimond * 7 / 100;
+        $dimondSecondCommission = $dimond * 3 / 100;
+        $dimondThirdCommission = $dimond * 1 / 100;
 
         $user = User::find($id);
         $user->status = 'approved';
@@ -146,46 +146,42 @@ class AdminDashboardController extends Controller
 
                 if ($allUsers != '') {
                     if ($referCount <= 4) {
-                        $firstUpliner->level = 'Level 0';
-                        $firstUpliner->save();
-                    }
-                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 1';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level2) {
+                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 2';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level3) {
+                    if ($referCount >= $level2) {
                         $firstUpliner->level = 'Level 3';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level4) {
+                    if ($referCount >= $level3) {
                         $firstUpliner->level = 'Level 4';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level5) {
+                    if ($referCount >= $level4) {
                         $firstUpliner->level = 'Level 5';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level6) {
+                    if ($referCount >= $level5) {
                         $firstUpliner->level = 'Level 6';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level7) {
+                    if ($referCount >= $level6) {
                         $firstUpliner->level = 'Level 7';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level8) {
+                    if ($referCount >= $level7) {
                         $firstUpliner->level = 'Level 8';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level9) {
+                    if ($referCount >= $level8) {
                         $firstUpliner->level = 'Level 9';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level10) {
+                    if ($referCount >= $level9) {
                         $firstUpliner->level = 'Level 10';
                         $firstUpliner->save();
                     }
@@ -226,46 +222,42 @@ class AdminDashboardController extends Controller
 
                 if ($mainUser != '') {
                     if ($referCount <= 4) {
-                        $firstUpliner->level = 'Level 0';
-                        $firstUpliner->save();
-                    }
-                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 1';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level2) {
+                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 2';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level3) {
+                    if ($referCount >= $level2) {
                         $firstUpliner->level = 'Level 3';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level4) {
+                    if ($referCount >= $level3) {
                         $firstUpliner->level = 'Level 4';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level5) {
+                    if ($referCount >= $level4) {
                         $firstUpliner->level = 'Level 5';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level6) {
+                    if ($referCount >= $level5) {
                         $firstUpliner->level = 'Level 6';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level7) {
+                    if ($referCount >= $level6) {
                         $firstUpliner->level = 'Level 7';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level8) {
+                    if ($referCount >= $level7) {
                         $firstUpliner->level = 'Level 8';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level9) {
+                    if ($referCount >= $level8) {
                         $firstUpliner->level = 'Level 9';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level10) {
+                    if ($referCount >= $level9) {
                         $firstUpliner->level = 'Level 10';
                         $firstUpliner->save();
                     }
@@ -306,46 +298,42 @@ class AdminDashboardController extends Controller
 
                 if ($mainUser != '') {
                     if ($referCount <= 4) {
-                        $firstUpliner->level = 'Level 0';
-                        $firstUpliner->save();
-                    }
-                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 1';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level2) {
+                    if ($referCount >= $level1) {
                         $firstUpliner->level = 'Level 2';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level3) {
+                    if ($referCount >= $level2) {
                         $firstUpliner->level = 'Level 3';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level4) {
+                    if ($referCount >= $level3) {
                         $firstUpliner->level = 'Level 4';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level5) {
+                    if ($referCount >= $level4) {
                         $firstUpliner->level = 'Level 5';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level6) {
+                    if ($referCount >= $level5) {
                         $firstUpliner->level = 'Level 6';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level7) {
+                    if ($referCount >= $level6) {
                         $firstUpliner->level = 'Level 7';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level8) {
+                    if ($referCount >= $level7) {
                         $firstUpliner->level = 'Level 8';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level9) {
+                    if ($referCount >= $level8) {
                         $firstUpliner->level = 'Level 9';
                         $firstUpliner->save();
                     }
-                    if ($referCount >= $level10) {
+                    if ($referCount >= $level9) {
                         $firstUpliner->level = 'Level 10';
                         $firstUpliner->save();
                     }
@@ -424,76 +412,6 @@ class AdminDashboardController extends Controller
         $user->save();
         return redirect()->back()->with('success', 'Account has been Rejected successfully');
     }
-
-    // set user level
-
-    // public function setLevel()
-    // {
-    //     $users = User::where('status', 'approved')->get();
-    //     foreach ($users as $user) {
-    //         $mainUser = User::where('referal', $user->email)->where('status','approved')->get();
-    //         $referCount = $mainUser->count();
-
-    //         if (!$mainUser = '') {
-    //             if ($referCount <= 4) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 0';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 5) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 1';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 20) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 2';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 45) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 3';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 70) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 4';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 100) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 5';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 145) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 6';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 200) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 7';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 270) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 8';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 350) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 9';
-    //                 $user->save();
-    //             }
-    //             if ($referCount >= 10000) {
-    //                 $user = User::where('id', $user->id)->first();
-    //                 $user->level = 'Level 10';
-    //                 $user->save();
-    //             }
-    //         }
-    //     }
-    //     return redirect()->back()->with('success', 'Level Given to all users according to their referals');
-    // }
 
     public function vistors()
     {
