@@ -60,7 +60,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isAccount15DaysOld(): bool
+    public function isAccount10DaysOld(): bool
     {
         // Get the user's creation date (assuming the column name is "created_at")
         $createdAt = $this->created_at;
@@ -69,7 +69,7 @@ class User extends Authenticatable
         $differenceInDays = Carbon::now()->diffInDays($createdAt);
 
         // Check if the difference is greater than or equal to 15
-        return $differenceInDays >= 15;
+        return $differenceInDays >= 10;
     }
 
 

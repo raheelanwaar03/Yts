@@ -37,27 +37,4 @@ class UserDashboardController extends Controller
         return view('user.work.widthrawReq', compact('widthraws'));
     }
 
-    public function work()
-    {
-
-        $currentDate = Carbon::now();
-        $fifteenDaysAgo = $currentDate->subDays(15);
-        // checking user last 15 days referals
-
-        $user = User::find(auth()->user()->id);
-
-        if (!$user->isAccount15DaysOld()) {
-
-            $products = AdminProductModel::where('product_level', auth()->user()->level)->paginate(9);
-            return view('user.work.index', compact('products'));
-        }
-
-        $userReferal = User::where('referal', auth()->user()->username)->whereDate('created_at', '>', $fifteenDaysAgo)->where('status', 'approved')->get();
-        if ($userReferal->isEmpty()) {
-            return redirect()->back()->with('error', 'You have not add any user from last 15 days. Please add new user to continue');
-        } else {
-            $products = AdminProductModel::where('product_level', auth()->user()->level)->paginate(9);
-            return view('user.work.index', compact('products'));
-        }
-    }
 }
