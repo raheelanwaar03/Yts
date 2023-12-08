@@ -151,9 +151,8 @@
                                 <td>{{ $dt->plan }}</td>
                                 <td>{{ $dt->level }}</td>
                                 <td class="d-flex justify-content-center align-items-center">
-                                    <a href="{{ route('Admin.Delete.User.Setting') . '/' . $dt->id }}"
+                                    <a href="{{ route('Admin.Delete.User.Setting', ['id' => $dt->id]) }}"
                                         class="btn btn-sm btn-danger mx-3">Delete</a>
-
                             </tr>
                         @endforeach
                     </tbody>
