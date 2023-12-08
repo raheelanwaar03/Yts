@@ -479,88 +479,28 @@
 
                     <tr class="text-dark" style="background-color: rgb(255, 132, 110)">
                         <th scope="col">Name</th>
-                        <th scope="col">Balance</th>
+                        <th scope="col">Earning</th>
                         <th scope="col">Level</th>
+                        <th scope="col">Plan</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($user_setting as $item)
                     <tr>
                         <td>
-                            <h3>Roqia shafiq</h3>
+                            <h3>{{ $item->name }}</h3>
                         </td>
                         <td>
-                            <h4>4680</h4>
+                            <h4>{{ $item->earning }}</h4>
                         </td>
                         <td>
-                            <h4>Level 10</h4>
+                            <h4>{{ $item->level }}</h4>
+                        </td>
+                        <td>
+                            <h4>{{ $item->plan }}</h4>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <h3>Muhammad Adil</h3>
-                        </td>
-                        <td>
-                            <h4>2630</h4>
-                        </td>
-                        <td>
-                            <h4>Level 7</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Ahmad Khan</h3>
-                        </td>
-                        <td>
-                            <h4>1005</h4>
-                        </td>
-                        <td>
-                            <h4>Level 6</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Atteq Ishfaq</h3>
-                        </td>
-                        <td>
-                            <h4>3200</h4>
-                        </td>
-                        <td>
-                            <h4>Level 9</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Noor bibi</h3>
-                        </td>
-                        <td>
-                            <h4>765</h4>
-                        </td>
-                        <td>
-                            <h4>Level 4</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Ansar Ali</h3>
-                        </td>
-                        <td>
-                            <h4>2215</h4>
-                        </td>
-                        <td>
-                            <h4>Level 8</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Muhammad Bilal</h3>
-                        </td>
-                        <td>
-                            <h4>1530</h4>
-                        </td>
-                        <td>
-                            <h4>Level 7</h4>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

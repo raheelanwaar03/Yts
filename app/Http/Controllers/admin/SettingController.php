@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Setting;
 use App\Models\user\ReferalLevel;
+use App\Models\user\UserSetting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -18,6 +19,30 @@ class SettingController extends Controller
     {
         $settings = Setting::where('status', 1)->get();
         return view('admin.dashboard.setting', compact('settings'));
+    }
+
+    public function userSet()
+    {
+        $user_setting = UserSetting::get();
+        return view('admin.setting.setUser',compact('user_setting'));
+    }
+
+    public function storeUserSetting(Request $request)
+    {
+        $user_setting = new UserSetting();
+        $user_setting->name = $request->name;
+        $user_setting->level = $request->level;
+        $user_setting->plan = $request->plan;
+        $user_setting->earning = $request->earning;
+        $user_setting->save();
+        return redirect()->back()->with('success', 'Student details added successfully');
+    }
+
+    public function delUserSetting($id)
+    {
+        $user = UserSetting::find($id);
+        $user->delete();
+        return redirect()->back()->with('success', 'User deleted successfully');
     }
 
     /**
@@ -108,7 +133,7 @@ class SettingController extends Controller
     public function editLevel($id)
     {
         $level = ReferalLevel::find($id);
-        return view('admin.setting.editlevel',compact('level'));
+        return view('admin.setting.editlevel', compact('level'));
     }
 
     public function updateLevel(Request $request, $id)

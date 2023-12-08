@@ -44,7 +44,10 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     // Admin esaypaisa details Routes
 
     Route::resource('Easypaisa', EasypisaController::class);
-    // Level Routes
+    // Level Routes set/users
+    Route::get('set/users',[SettingController::class,'userSet'])->name('Set.User');
+    Route::post('Store/set/users',[SettingController::class,'storeUserSetting'])->name('Store.User.Setting');
+    Route::get('Delete/User/Setting/{id}',[SettingController::class,'delUserSetting'])->name('Delete.User.Setting');
     Route::get('Level/Setting',[SettingController::class,'allLevels'])->name('All.Levels');
     Route::get('Edit/Level/Setting/{id}',[SettingController::class,'editLevel'])->name('Edit.Level');
     Route::post('Update/Level/Setting/{id}',[SettingController::class,'updateLevel'])->name('Update.Level');

@@ -495,10 +495,12 @@
             <div class="col-12  col-md-12">
                 <a href="{{ asset('Admin/daily-task') }}"><button
                         class="btn btn-primary btn-lg w-100 btn-block custom-button">Add Tasks</button></a>
+                <a href="{{ asset('Admin/set/users') }}"><button
+                        class="btn btn-primary btn-lg w-100 btn-block custom-button">User Setting</button></a>
             </div>
         </div>
         {{-- Withdraw --}}
-        <div class="container  hidden" id="work">
+        <div class="container hidden" id="work">
             <div class="row">
                 <div class="col-12  col-md-4">
                     <a href="{{ asset('Admin/Widthraw/Requests') }}"><button
