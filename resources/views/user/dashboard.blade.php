@@ -446,7 +446,7 @@
             <div class="card-container">
                 <div class="card">
                     <div class="row">
-                        <div class="col-6"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <div class="col-6"><i class="fa fa-usd" aria-hidden="true"></i></div>
                         <div class="col-6">
                             <h6> Current Balance</h6>
                             <h2>PKR <b>{{ Auth::user()->balance }}</b></h2>
@@ -473,7 +473,7 @@
         {{-- Top Users --}}
 
         <div class="container work-container hidden mt-2" id="top_users">
-            <h4 style="margin-top:-30px;" class="text-center">Today's Task</h4>
+            <h4 style="margin-top:-30px;" class="text-center">Highly Earning Users</h4>
             <table class="table table-bordered  table-sm text-center">
                 <thead>
 
