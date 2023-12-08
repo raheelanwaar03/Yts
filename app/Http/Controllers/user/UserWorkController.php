@@ -42,9 +42,7 @@ class UserWorkController extends Controller
             if ($validated['widthraw_amount'] <= 100) {
                 return redirect()->back()->with('error', 'You can only widthraw 100 Rs.');
             }
-        }
-
-        if (auth()->user()->level != 'Level 1') {
+        } elseif (auth()->user()->level != 'Level 1') {
             if ($validated['widthraw_amount'] <= 400) {
                 return redirect()->back()->with('error', 'You can only widthraw 400 Rs.');
             }
