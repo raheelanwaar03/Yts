@@ -133,8 +133,8 @@
                                             journey to effortless earnings!
                                         </p>
                                         <div class="btn-box">
-                                            <a href="{{ route('register') }}" class="btn1">
-                                                Get Started
+                                            <a href="#" class="btn1">
+                                                Join Us
                                             </a>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                                             journey to effortless earnings!
                                         </p>
                                         <div class="btn-box">
-                                            <a href="{{ route('register') }}" class="btn1">
+                                            <a href="#" class="btn1">
                                                 Get Started
                                             </a>
                                         </div>
@@ -205,7 +205,7 @@
                                             journey to effortless earnings!
                                         </p>
                                         <div class="btn-box">
-                                            <a href="{{ route('register') }}" class="btn1">
+                                            <a href="#" class="btn1">
                                                 Get Started
                                             </a>
                                         </div>

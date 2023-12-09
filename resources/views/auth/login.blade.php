@@ -110,10 +110,6 @@
 
           <button type="submit">Sign In</button>
         </form>
-
-        <div class="signup-link">
-          <p>Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
-        </div>
       </div>
 
 
