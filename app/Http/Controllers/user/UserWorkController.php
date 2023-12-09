@@ -37,6 +37,17 @@ class UserWorkController extends Controller
         if ($userWidthrawAmount > auth()->user()->balance) {
             return redirect()->back()->with('error', 'You have not enough balance');
         }
+
+        // if (auth()->user()->level == 'Level 1') {
+        //     if ($validated['widthraw_amount'] >= 100) {
+        //         return redirect()->back()->with('error', 'You can only widthraw 100 Rs.');
+        //     }
+        // } elseif (auth()->user()->level !== 'Level 1') {
+        //     if ($validated['widthraw_amount'] >= 400) {
+        //         return redirect()->back()->with('error', 'You can only widthraw 400 Rs.');
+        //     }
+        // }
+
         // Checking Admin Limite
 
         $adminWidthraw = Setting::where('status', 1)->first();
