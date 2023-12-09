@@ -425,7 +425,10 @@
         <nav>
             <span><i class="fa-regular fa-circle-play"></i>YTSEARNING</span>
             <div class="user-info">
-                <img src="{{ asset('assets/images/dashboard/author.png') }}" alt="User Photo">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
             </div>
         </nav>
     </header>
