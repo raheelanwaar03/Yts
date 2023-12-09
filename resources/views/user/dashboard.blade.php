@@ -422,7 +422,7 @@
 
 @section('content')
     <header>
-        <nav>
+        <nav class="d-flex justify-content-between align-items-center">
             <span><i class="fa-regular fa-circle-play"></i>YTSEARNING</span>
             <div class="user-info">
                 <form action="{{ route('logout') }}" method="POST">
