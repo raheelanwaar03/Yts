@@ -61,7 +61,8 @@
                                         <div class="author-body">
                                             <ul>
                                                 <li>
-                                                    <a href="{{ route('profile.edit') }}" class="text-seconday"><i class="fas fa-user-edit"></i>Edit
+                                                    <a href="{{ route('profile.edit') }}" class="text-seconday"><i
+                                                            class="fas fa-user-edit"></i>Edit
                                                         Profile</a>
                                                 </li>
                                                 <li>
@@ -96,25 +97,31 @@
                 <hr>
                 <div class="col-md-12">
                     <div class="card">
-                        <form action="{{ route('Admin.Update.User',['id'=>$user->id]) }}" method="POST">
+                        <form action="{{ route('Admin.Update.User', ['id' => $user->id]) }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="" class="ml-2">Username</label>
-                                <input type="text" name="name" value="{{ $user->name }}" class="form-control" readonly>
+                                <input type="text" name="name" value="{{ $user->name }}" class="form-control"
+                                    readonly>
                             </div>
                             <div class="form-group">
                                 <label for="" class="ml-2">Email</label>
-                                <input type="text" name="email" value="{{ $user->email }}" class="form-control" readonly>
+                                <input type="text" name="email" value="{{ $user->email }}" class="form-control"
+                                    readonly>
                             </div>
                             <div class="form-group">
-                                <label for="" class="ml-2">Plan</label>
-                                <input type="text" name="plan" value="{{ $user->plan }}" class="form-control">
+                                <label for="" class="m-3">Package</label>
+                                <select name="plan" class="form-control">
+                                    <option value="1">One Star</option>
+                                    <option value="2">Two Star</option>
+                                    <option value="3">Three Star</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="" class="ml-2">Level</label>
                                 <input type="text" name="level" value="{{ $user->level }}" class="form-control">
                             </div>
-                             <div class="form-group">
+                            <div class="form-group">
                                 <label for="" class="ml-2">Balance</label>
                                 <input type="text" name="balance" value="{{ $user->balance }}" class="form-control">
                             </div>
