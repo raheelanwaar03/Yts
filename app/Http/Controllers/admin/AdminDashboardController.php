@@ -56,6 +56,7 @@ class AdminDashboardController extends Controller
     {
         $user = User::find($id);
         $user->level = $request->level;
+        $user->plan = $request->plan;
         $user->balance = $request->balance;
         $user->save();
         return redirect()->back()->with('success', 'User Details updated successfully');

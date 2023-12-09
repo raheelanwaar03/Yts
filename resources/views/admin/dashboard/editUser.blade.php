@@ -107,6 +107,10 @@
                                 <input type="text" name="email" value="{{ $user->email }}" class="form-control" readonly>
                             </div>
                             <div class="form-group">
+                                <label for="" class="ml-2">Plan</label>
+                                <input type="text" name="plan" value="{{ $user->plan }}" class="form-control">
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="ml-2">Level</label>
                                 <input type="text" name="level" value="{{ $user->level }}" class="form-control">
                             </div>
