@@ -130,15 +130,13 @@ class AdminDashboardController extends Controller
 
 
         $user = User::find($id);
-        $userId = $user->id;
         $user->status = 'approved';
         $user->save();
 
         // making status approved for easypaisa user
-        $user_trx = FeesCollecator::where('user_id', $id)->first();
+        $user_trx = FeesCollecator::where('id', $user->id)->first();
         $user_trx->status = 'approved';
         $user_trx->save();
-
 
         // checking user selected plan
         $userPlan = $user->plan;
