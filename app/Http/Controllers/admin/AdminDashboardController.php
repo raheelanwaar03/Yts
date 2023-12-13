@@ -27,6 +27,12 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard.editUser', compact('user'));
     }
 
+    public function todayUser()
+    {
+        $users = User::with('trxIds')->where('created_at', Carbon::today())->get();
+        return view('admin.dashboard.todayUser', compact('users'));
+    }
+
     // Email setting
 
     public function emailSetting()

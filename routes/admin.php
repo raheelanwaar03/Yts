@@ -20,6 +20,7 @@ Route::prefix('Admin')->name('Admin.')->middleware('auth', 'admin')->group(funct
     Route::get('/User/Tids', [AdminDashboardController::class, 'userTids'])->name('All.Tids');
     Route::get('/All/Users', [AdminDashboardController::class, 'allUsers'])->name('All.Users');
     Route::get('/Pending/Users', [AdminDashboardController::class, 'pendingUsers'])->name('Pending.Users');
+    Route::get('/Today/Users', [AdminDashboardController::class, 'todayUser'])->name('Today.Users');
     Route::get('/Approved/Users', [AdminDashboardController::class, 'approvedUsers'])->name('Approved.Users');
     Route::get('/Rejected/Users', [AdminDashboardController::class, 'rejectedUsers'])->name('Rejected.Users');
     Route::get('/Easypaisa/Users', [AdminDashboardController::class, 'easypaisaUsers'])->name('Easypaisa.Users');

@@ -473,6 +473,10 @@
                             class="btn btn-primary btn-lg w-100 btn-block custom-button">Vistors</button></a>
                 </div>
                 <div class="col-12  col-md-6">
+                    <a href="{{ route('Admin.Today.Users') }}"><button
+                            class="btn btn-primary btn-lg w-100 btn-block custom-button">Today's Users</button></a>
+                </div>
+                <div class="col-12  col-md-6">
                     <a href="{{ asset('Admin/Pending/Users') }}"><button
                             class="btn btn-primary btn-lg w-100 btn-block custom-button">Pending Users</button></a>
                 </div>
