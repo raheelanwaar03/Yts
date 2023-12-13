@@ -126,7 +126,7 @@
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Price</label>
-                    <input type="number" name="price" class="form-group" placeholder="Add Link Price">
+                    <input type="number" name="price" class="form-group" step="3" placeholder="Add Link Price">
                 </div>
                 <div class="form-group">
                     <label for="" class="m-3">Description</label>
