@@ -105,8 +105,8 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <td>Bank UserName</td>
-                                <td>TrxID</td>
+                                <th>Bank UserName</th>
+                                <th>TrxID</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -135,7 +135,6 @@
                                 </tr>
                             @endforeach
                         </tbody>
-
                     </table>
                 </div>
             </div>
