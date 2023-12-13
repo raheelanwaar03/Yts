@@ -123,12 +123,8 @@
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->plan }}</td>
                                     <td>{{ $user->referal }}</td>
-                                    @if ($user->trxIds !== null)
-                                        {
-                                        <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
-                                        <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
-                                        }
-                                    @endif
+                                    <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
