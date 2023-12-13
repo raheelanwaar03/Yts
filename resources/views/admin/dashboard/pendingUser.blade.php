@@ -106,7 +106,7 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                @if ($user->trxIds !== null)
+                                @if ($users->trxIds !== null)
                                     {
                                     <td>Username</td>
                                     <td>TrxID</td>
