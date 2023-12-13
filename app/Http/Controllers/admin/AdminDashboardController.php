@@ -78,7 +78,7 @@ class AdminDashboardController extends Controller
 
     public function pendingUsers()
     {
-        $users = User::where('status', 'pending')->with('trxIds' !== null )->get();
+        $users = User::where('status', 'pending')->with('trxIds')->get();
         return view('admin.dashboard.pendingUser', compact('users'));
     }
 
