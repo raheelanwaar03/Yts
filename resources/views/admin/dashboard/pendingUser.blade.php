@@ -128,6 +128,7 @@
                                         <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
                                         <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
                                     }
+                                    @endif
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
