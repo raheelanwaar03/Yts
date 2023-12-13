@@ -128,16 +128,16 @@ class AdminDashboardController extends Controller
         $dimondSecondCommission = $dimond * 3 / 100;
         $dimondThirdCommission = $dimond * 1 / 100;
 
-        // making status approved for easypaisa user
-        $user_trx = FeesCollecator::where('user_id', $id)->first();
-        return $user_trx;
-        $user_trx->status = 'approved';
-        $user_trx->save();
 
         $user = User::find($id);
+        $userId = $user->id;
         $user->status = 'approved';
         $user->save();
 
+        // making status approved for easypaisa user
+        $user_trx = FeesCollecator::where('user_id', $userId)->first();
+        $user_trx->status = 'approved';
+        $user_trx->save();
 
 
         // checking user selected plan
