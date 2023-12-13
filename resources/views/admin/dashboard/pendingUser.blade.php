@@ -99,31 +99,32 @@
                     <table id="myTable" class="table table-responsive table-bordered">
                         <thead>
                             <tr class="">
-                                <th>ID</th>
-                                <th>Name</th>
+                                <th>Id</th>
+                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Level</th>
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <th>Username</th>
-                                <th>TrxID</th>
+                                <td>Username</td>
+                                <td>TrxID</td>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->userFees->id }}</td>
-                                    <td>{{ $user->userFees->name }}</td>
-                                    <td>{{ $user->userFees->email }}</td>
-                                    <td>{{ $user->userFees->level }}</td>
-                                    <td>{{ $user->userFees->phone }}</td>
-                                    <td>{{ $user->userFees->plan }}</td>
-                                    <td>{{ $user->userFees->referal }}</td>
-                                    <td>{{ $user->bank_username }}</td>
-                                    <td>{{ $user->tid }}</td>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->level }}</td>
+                                    <td>{{ $user->phone }}</td>
+                                    <td>{{ $user->plan }}</td>
+                                    <td>{{ $user->referal }}</td>
+                                    <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
@@ -136,6 +137,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
+
                     </table>
                 </div>
             </div>
