@@ -99,14 +99,13 @@
                     <table id="myTable" class="table table-responsive table-bordered">
                         <thead>
                             <tr class="">
-                                <th>Id</th>
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Level</th>
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <td>Username</td>
+                                <td>Bank UserName</td>
                                 <td>TrxID</td>
                                 <th>Status</th>
                                 <th>Action</th>
