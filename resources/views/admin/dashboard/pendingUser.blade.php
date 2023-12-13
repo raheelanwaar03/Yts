@@ -106,8 +106,12 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <th>Username</th>
-                                <th>Trx Id</th>
+                                @if ($user->trxIds !== null)
+                                    {
+                                    <td>Username</td>
+                                    <td>TrxID</td>
+                                    }
+                                @endif
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -123,11 +127,11 @@
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->plan }}</td>
                                     <td>{{ $user->referal }}</td>
-                                    @if($user->trxIds !== null)
-                                    {
+                                    @if ($user->trxIds !== null)
+                                        {
                                         <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
                                         <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
-                                    }
+                                        }
                                     @endif
                                     <td>{{ $user->status }}</td>
                                     <td>
