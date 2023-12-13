@@ -116,15 +116,14 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->level }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->plan }}</td>
-                                    <td>{{ $user->referal }}</td>
-                                    <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
-                                    <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->trxIds->name }}</td>
+                                    <td>{{ $user->trxIds->email }}</td>
+                                    <td>{{ $user->trxIds->level }}</td>
+                                    <td>{{ $user->trxIds->phone }}</td>
+                                    <td>{{ $user->trxIds->plan }}</td>
+                                    <td>{{ $user->trxIds->referal }}</td>
+                                    <td>{{ $user->bank_username }}</td>
+                                    <td>{{ $user->tid }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"

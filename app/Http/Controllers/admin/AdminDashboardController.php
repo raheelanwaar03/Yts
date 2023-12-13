@@ -9,8 +9,7 @@ use App\Models\User;
 use App\Models\user\ReferalLevel;
 use App\Models\Vistor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Carbon\Carbon;
+use App\Models\FeesCollecator;
 
 
 class AdminDashboardController extends Controller
@@ -78,7 +77,7 @@ class AdminDashboardController extends Controller
 
     public function pendingUsers()
     {
-        $users = User::where('status', 'pending')->with('trxIds')->get();
+        $users = FeesCollecator::where('status', 'pending')->with('trxIds')->get();
         return view('admin.dashboard.pendingUser', compact('users'));
     }
 
@@ -129,9 +128,16 @@ class AdminDashboardController extends Controller
         $dimondSecondCommission = $dimond * 3 / 100;
         $dimondThirdCommission = $dimond * 1 / 100;
 
+        // making status approved for easypaisa user
+        $user_trx = FeesCollecator::where('user_id', $id)->first();
+        $user_trx->status = 'approved';
+        $user_trx->save();
+
         $user = User::find($id);
         $user->status = 'approved';
         $user->save();
+
+
 
         // checking user selected plan
         $userPlan = $user->plan;
