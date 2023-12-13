@@ -106,12 +106,8 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                @if ($users->trxIds !== null)
-                                    {
-                                    <td>Username</td>
-                                    <td>TrxID</td>
-                                    }
-                                @endif
+                                <td>Username</td>
+                                <td>TrxID</td>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
