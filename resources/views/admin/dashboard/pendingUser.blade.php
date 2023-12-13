@@ -99,22 +99,23 @@
                     <table id="myTable" class="table table-responsive table-bordered">
                         <thead>
                             <tr class="">
-                                <th>Username</th>
+                                <th>ID</th>
+                                <th>Name</th>
                                 <th>Email</th>
                                 <th>Level</th>
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <th>Bank UserName</th>
+                                <th>Username</th>
                                 <th>TrxID</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
+                                    <td>{{ $user->userFees->id }}</td>
                                     <td>{{ $user->userFees->name }}</td>
                                     <td>{{ $user->userFees->email }}</td>
                                     <td>{{ $user->userFees->level }}</td>
