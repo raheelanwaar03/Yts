@@ -106,6 +106,7 @@
                                 <th>Level</th>
                                 <th>Phone</th>
                                 <th>Balance</th>
+                                <th>Status</th>
                                 <th>Tids</th>
                                 <th>Action</th>
                             </tr>
@@ -114,12 +115,13 @@
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->id }}</td>
-                                    <td>{{ $user->username }}</td>
+                                    <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->referal }}</td>
                                     <td>{{ $user->level }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->balance }}</td>
+                                    <td>{{ $user->status }}</td>
                                     <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
