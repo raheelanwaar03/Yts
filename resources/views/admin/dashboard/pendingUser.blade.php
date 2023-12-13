@@ -116,12 +116,12 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->trxIds->name }}</td>
-                                    <td>{{ $user->trxIds->email }}</td>
-                                    <td>{{ $user->trxIds->level }}</td>
-                                    <td>{{ $user->trxIds->phone }}</td>
-                                    <td>{{ $user->trxIds->plan }}</td>
-                                    <td>{{ $user->trxIds->referal }}</td>
+                                    <td>{{ $user->userFees->name }}</td>
+                                    <td>{{ $user->userFees->email }}</td>
+                                    <td>{{ $user->userFees->level }}</td>
+                                    <td>{{ $user->userFees->phone }}</td>
+                                    <td>{{ $user->userFees->plan }}</td>
+                                    <td>{{ $user->userFees->referal }}</td>
                                     <td>{{ $user->bank_username }}</td>
                                     <td>{{ $user->tid }}</td>
                                     <td>{{ $user->status }}</td>
