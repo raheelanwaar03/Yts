@@ -135,7 +135,7 @@ class AdminDashboardController extends Controller
         $user->save();
 
         // making status approved for easypaisa user
-        $user_trx = FeesCollecator::where('user_id', $userId)->first();
+        $user_trx = FeesCollecator::where('user_id', $id)->first();
         $user_trx->status = 'approved';
         $user_trx->save();
 
