@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('plan');
-            $table->integer('balance')->default(0);
+            $table->float('balance', 10, 3)->default(0);
             $table->string('referal')->default('default');
             $table->text('level')->default('Level 1');
             $table->string('status')->default('pending');
