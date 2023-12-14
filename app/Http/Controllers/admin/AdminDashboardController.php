@@ -420,7 +420,11 @@ class AdminDashboardController extends Controller
 
     public function rejectUserAccount($id)
     {
-        $user = User::find($id);
+        $tid = FeesCollecator::find($id);
+        $tid->delete();
+        $user_id = $tid->user_id;
+        // rejecting user
+        $user = User::find($user_id);
         $user->status = 'rejected';
         $user->save();
         return redirect()->back()->with('success', 'Account has been Rejected successfully');
