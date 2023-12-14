@@ -106,13 +106,12 @@
                                 <th>Phone</th>
                                 <th>Package</th>
                                 <th>Referral</th>
-                                <td>Username</td>
-                                <td>TrxID</td>
+                                <th>Username</th>
+                                <th>TrxID</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($pending_users as $user)
                                 <tr>
