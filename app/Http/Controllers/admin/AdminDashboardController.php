@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\admin\EamilSetting;
 use App\Models\admin\Setting;
+use App\Models\FeesCollecator;
 use App\Models\User;
 use App\Models\user\ReferalLevel;
 use App\Models\Vistor;
@@ -84,8 +85,8 @@ class AdminDashboardController extends Controller
 
     public function pendingUsers()
     {
-        $users = User::where('status', 'pending')->with('trxIds')->get();
-        return view('admin.dashboard.pendingUser', compact('users'));
+        $pending_users = FeesCollecator::where('status', 'pending')->with('userFees')->get();
+        return view('admin.dashboard.pendingUser', compact('pending_users'));
     }
 
     public function approvedUsers()
@@ -135,7 +136,12 @@ class AdminDashboardController extends Controller
         $dimondSecondCommission = $dimond * 3 / 100;
         $dimondThirdCommission = $dimond * 1 / 100;
 
-        $user = User::find($id);
+        $pending_user = FeesCollecator::find($id);
+        $pending_user->status = 'approved';
+        $pending_user->save();
+        $tid = $pending_user->user_id;
+
+        $user = User::find($tid);
         $user->status = 'approved';
         $user->save();
 

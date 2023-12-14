@@ -114,17 +114,17 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($pending_users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->level }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->plan }}</td>
-                                    <td>{{ $user->referal }}</td>
-                                    <td>{{ $user->trxIds->bank_username ?? 'unpaid user' }}</td>
-                                    <td>{{ $user->trxIds->tid ?? 'unpaid user' }}</td>
+                                    <td>{{ $user->userFees->id }}</td>
+                                    <td>{{ $user->userFees->name }}</td>
+                                    <td>{{ $user->userFees->email }}</td>
+                                    <td>{{ $user->userFees->level }}</td>
+                                    <td>{{ $user->userFees->phone }}</td>
+                                    <td>{{ $user->userFees->plan }}</td>
+                                    <td>{{ $user->userFees->referal }}</td>
+                                    <td>{{ $user->bank_username }}</td>
+                                    <td>{{ $user->tid }}</td>
                                     <td>{{ $user->status }}</td>
                                     <td>
                                         <a href="{{ route('Admin.Approve.User.Account.Request', ['id' => $user->id]) }}"
