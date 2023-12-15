@@ -206,7 +206,7 @@
                                         </p>
                                         <div class="btn-box">
                                             <a href="#" class="btn1">
-                                                Get Started {{ auth()->user()->name }}
+                                                Get Started
                                             </a>
                                         </div>
                                     </div>
