@@ -91,13 +91,13 @@ class AdminDashboardController extends Controller
 
     public function approvedUsers()
     {
-        $users = User::where('status', 'approved')->with('trxIds')->get();
+        $users = FeesCollecator::where('status', 'approved')->with('userFees')->get();
         return view('admin.dashboard.approvedUsers', compact('users'));
     }
 
     public function rejectedUsers()
     {
-        $users = User::where('status', 'rejected')->with('trxIds')->get();
+        $users = FeesCollecator::where('status', 'rejected')->with('userFees')->get();
         return view('admin.dashboard.rejectedUser', compact('users'));
     }
 
@@ -377,51 +377,11 @@ class AdminDashboardController extends Controller
 
         return redirect()->back()->with('massage', 'User Approved Successfully');
     }
-    // {
-    //     // getting widthraw commission of admin
-    //     $setting = Setting::where('status', 1)->first();
-    //     $firstCommission = $setting->refer_amount;
-
-    //     $user = User::find($id);
-    //     $user->status = 'approved';
-    //     $user->save();
-    //     //  getting second user
-    //     $firstUpliner = User::where('email', $user->referal)->where('status', 'approved')->first();
-    //     if ($firstUpliner == null) {
-    //         return redirect()->back()->with('success', 'Account has beed Approved successfully');
-    //     } else {
-    //         $firstUpliner->balance += $firstCommission;
-    //         $firstUpliner->save();
-    //     }
-    //     //  Second Upliner
-    //     $indirectCommission1 = 20;
-    //     // getting user
-    //     $secondUpliner = User::where('email', $firstUpliner->referal)->where('status', 'approved')->first();
-
-    //     if ($secondUpliner == '') {
-    //         return redirect()->back()->with('success', 'Account has beed Approved successfully');
-    //     } else {
-    //         $secondUpliner->balance += $indirectCommission1;
-    //         $secondUpliner->save();
-    //     }
-    //     // Third UPliner
-    //     $indirectCommission2 = 5;
-    //     // getting third person;
-    //     $thirdUpliner = User::where('email', $secondUpliner->referal)->where('status', 'approved')->first();
-    //     if ($thirdUpliner == '') {
-    //         return redirect()->back()->with('success', 'Account has beed Approved successfully');
-    //     } else {
-    //         $thirdUpliner->balance += $indirectCommission2;
-    //         $thirdUpliner->save();
-    //     }
-
-    //     return redirect()->back()->with('success', 'User Approved Successfully');
-    // }
 
     public function rejectUserAccount($id)
     {
         $tid = FeesCollecator::find($id);
-        $tid->status = 'pending';
+        $tid->status = 'rejected';
         $tid->save();
         $user_id = $tid->user_id;
         // rejecting user
