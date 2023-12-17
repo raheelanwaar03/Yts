@@ -421,7 +421,8 @@ class AdminDashboardController extends Controller
     public function rejectUserAccount($id)
     {
         $tid = FeesCollecator::find($id);
-        $tid->delete();
+        $tid->status = 'pending';
+        $tid->save();
         $user_id = $tid->user_id;
         // rejecting user
         $user = User::find($user_id);
