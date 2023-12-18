@@ -91,7 +91,7 @@ class AdminDashboardController extends Controller
 
     public function approvedUsers()
     {
-        $users = FeesCollecator::where('status', 'approved')->with('userFees')->get();
+        $users = User::where('status', 'approved')->with('trxIds')->get();
         return view('admin.dashboard.approvedUsers', compact('users'));
     }
 
