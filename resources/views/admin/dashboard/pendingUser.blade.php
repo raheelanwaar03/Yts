@@ -130,7 +130,7 @@
                                             class="btn btn-sm btn-success">Approved</a>
                                         <a href="{{ route('Admin.Rejected.User.Account.Request', ['id' => $user->id]) }}"
                                             class="btn btn-sm btn-primary">Reject</a>
-                                        <a href="{{ route('Admin.Edit.User', ['id' => $user->id]) }}"
+                                        <a href="{{ route('Admin.Edit.User', ['id' => $user->userFees->id]) }}"
                                             class="btn btn-sm btn-warning">Edit</a>
                                     </td>
                                 </tr>
