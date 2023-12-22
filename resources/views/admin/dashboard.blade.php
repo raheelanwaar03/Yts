@@ -527,17 +527,17 @@
                     <a href="{{ route('Admin.All.Levels') }}"><button
                             class="btn btn-primary btn-lg w-100 btn-block custom-button">Level Setting</button></a>
                 </div>
-                <div class="row ml-2">
-                    <div class="col-md-12">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <a href="{{ route('Admin.Delete.Unnecessary.Users') }}"
-                                class="btn btn-primary  custom-button">Del Rejected Users</a>
-                            <a href="{{ route('Admin.Delete.Pending.Users') }}"
-                                class="btn btn-primary custom-button ml-3">Del Pending Users</a>
-                            <a href="{{ route('Admin.Delete.Ip') }}" class="btn btn-primary  custom-button ml-3">Make
-                                Clean</a>
-                        </div>
-                    </div>
+                <div class="col-12  col-md-6">
+                    <a href="{{ route('Admin.Delete.Unnecessary.Users') }}" class="btn btn-primary  custom-button">Del
+                        Rejected Users</a>
+                </div>
+                <div class="col-12  col-md-6">
+                    <a href="{{ route('Admin.Delete.Pending.Users') }}" class="btn btn-primary custom-button ml-3">Del
+                        Pending Users</a>
+                </div>
+                <div class="col-12  col-md-6">
+                    <a href="{{ route('Admin.Delete.Ip') }}" class="btn btn-primary  custom-button ml-3">Make
+                        Clean</a>
                 </div>
             </div>
         </div>
