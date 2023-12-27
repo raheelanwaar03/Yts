@@ -30,7 +30,7 @@ class AdminDashboardController extends Controller
 
     public function todayUser()
     {
-        $users = User::with('trxIds')->where('created_at', Carbon::today())->get();
+        $users = User::with('trxIds')->whereDate('created_at', Carbon::today())->get();
         return view('admin.dashboard.todayUser', compact('users'));
     }
 
