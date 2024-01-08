@@ -442,7 +442,7 @@
         <div id="dashboardInfo">
             <div class="marquee-container">
                 <div class="marquee-text">
-                    YTSEarning is a very good platform to invest your time and money. it is a real earning platform. Refere
+                    YTSEarning is a very good platform to invest your time and money.Our whatsapp is banned for few days contact us on 03276980900 if any convinence.It is a real earning platform. Refere
                     this to your friends and family.
                 </div>
             </div>
