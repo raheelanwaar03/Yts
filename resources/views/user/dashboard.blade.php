@@ -442,7 +442,8 @@
         <div id="dashboardInfo">
             <div class="marquee-container">
                 <div class="marquee-text">
-                    YTSEarning is a very good platform to invest your time and money.Our whatsapp is banned for few days contact us on 03276980900 if any convinence.It is a real earning platform. Refere
+                    YTSEarning is a very good platform to invest your time and money.<b>Our whatsapp is banned for few days
+                        contact us on 03276980900 if any convinence</b>.It is a real earning platform. Refere
                     this to your friends and family.
                 </div>
             </div>
@@ -489,20 +490,20 @@
                 </thead>
                 <tbody>
                     @foreach ($user_setting as $item)
-                    <tr>
-                        <td>
-                            <h3>{{ $item->name }}</h3>
-                        </td>
-                        <td>
-                            <h4>{{ $item->earning }}</h4>
-                        </td>
-                        <td>
-                            <h4>{{ $item->level }}</h4>
-                        </td>
-                        <td>
-                            <h4>{{ $item->plan }}</h4>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <h3>{{ $item->name }}</h3>
+                            </td>
+                            <td>
+                                <h4>{{ $item->earning }}</h4>
+                            </td>
+                            <td>
+                                <h4>{{ $item->level }}</h4>
+                            </td>
+                            <td>
+                                <h4>{{ $item->plan }}</h4>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -548,7 +549,8 @@
             <!-- Current Balance -->
             <div class="mb-3">
                 <label for="currentBalance">Current Balance:</label>
-                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}" readonly>
+                <input type="text" class="form-control" id="currentBalance" value="{{ Auth::user()->balance }}"
+                    readonly>
             </div>
 
             <!-- Withdraw Form -->
@@ -980,7 +982,8 @@
                     var aaElements = document.querySelectorAll('.aa');
 
                     aaElements.forEach(function(element) {
-                        if (element.style.display === 'none' || element.style.display ==='') {
+                        if (element.style.display === 'none' || element.style.display ===
+                            '') {
                             element.style.display = 'block';
                         } else {
                             element.style.display = 'none';
