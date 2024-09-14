@@ -133,9 +133,22 @@
                                             journey to effortless earnings!
                                         </p>
                                         <div class="btn-box">
-                                            <a href="#" class="btn1">
-                                                Join Us
-                                            </a>
+                                            @if (auth()->user())
+                                                {{-- send logout form request when click on logout button --}}
+                                                <a href="{{ route('logout') }}" class="btn1"
+                                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            @else
+                                                <a href="#" class="btn1">
+                                                    Join Us
+                                                </a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
